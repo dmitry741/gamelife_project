@@ -15,5 +15,10 @@ namespace ConwaysGameLife
         {
             InitializeComponent();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.White;
+        }
     }
 }
