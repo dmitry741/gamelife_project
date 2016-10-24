@@ -20,5 +20,10 @@ namespace ConwaysGameLife
         {
             pictureBox1.BackColor = Color.White;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
