@@ -32,7 +32,11 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSceneMode = new System.Windows.Forms.ComboBox();
+<<<<<<< HEAD
             this.label2 = new System.Windows.Forms.Label();
+=======
+            this.button1 = new System.Windows.Forms.Button();
+>>>>>>> DevBranch
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +75,7 @@
             this.cmbSceneMode.Size = new System.Drawing.Size(177, 21);
             this.cmbSceneMode.TabIndex = 3;
             // 
+<<<<<<< HEAD
             // label2
             // 
             this.label2.AutoSize = true;
@@ -79,13 +84,27 @@
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "master";
+=======
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(812, 680);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 38);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Exit (DevBranch)";
+            this.button1.UseVisualStyleBackColor = true;
+>>>>>>> DevBranch
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 730);
+<<<<<<< HEAD
             this.Controls.Add(this.label2);
+=======
+            this.Controls.Add(this.button1);
+>>>>>>> DevBranch
             this.Controls.Add(this.cmbSceneMode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnStart);
@@ -106,7 +125,11 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSceneMode;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label2;
+=======
+        private System.Windows.Forms.Button button1;
+>>>>>>> DevBranch
     }
 }
 
