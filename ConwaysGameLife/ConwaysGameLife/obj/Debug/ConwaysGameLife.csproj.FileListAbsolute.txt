@@ -1,9 +1,0 @@
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\bin\Debug\ConwaysGameLife.exe
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\bin\Debug\ConwaysGameLife.pdb
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.csprojResolveAssemblyReference.cache
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.frmMain.resources
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.Properties.Resources.resources
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.csproj.GenerateResource.Cache
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.exe
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.pdb
-C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.frmAbout.resources
