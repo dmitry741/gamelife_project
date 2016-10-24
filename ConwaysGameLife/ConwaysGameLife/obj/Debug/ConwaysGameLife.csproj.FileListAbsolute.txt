@@ -6,3 +6,4 @@ C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\Conw
 C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.csproj.GenerateResource.Cache
 C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.exe
 C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.pdb
+C:\Dmitry\GitHub\GameLife_project\ConwaysGameLife\ConwaysGameLife\obj\Debug\ConwaysGameLife.frmAbout.resources
