@@ -31,6 +31,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbSceneMode = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(724, 69);
+            this.btnStart.Location = new System.Drawing.Point(724, 113);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(124, 38);
             this.btnStart.TabIndex = 1;
@@ -60,11 +61,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Scene mode";
             // 
+            // cmbSceneMode
+            // 
+            this.cmbSceneMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSceneMode.FormattingEnabled = true;
+            this.cmbSceneMode.Location = new System.Drawing.Point(724, 28);
+            this.cmbSceneMode.Name = "cmbSceneMode";
+            this.cmbSceneMode.Size = new System.Drawing.Size(177, 21);
+            this.cmbSceneMode.TabIndex = 3;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 730);
+            this.ClientSize = new System.Drawing.Size(948, 730);
+            this.Controls.Add(this.cmbSceneMode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pictureBox1);
@@ -83,6 +94,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbSceneMode;
     }
 }
 
