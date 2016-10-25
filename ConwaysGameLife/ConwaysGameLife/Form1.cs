@@ -53,6 +53,16 @@ namespace ConwaysGameLife
 
             m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
+
+            cmbSceneMode.Items.Add("View");
+            cmbSceneMode.Items.Add("Add cell");
+            cmbSceneMode.Items.Add("Remove cell");
+            cmbSceneMode.SelectedIndex = 0;
+
+            cmbAnimateMode.Items.Add("Fast");
+            cmbAnimateMode.Items.Add("Normal");
+            cmbAnimateMode.Items.Add("Slow");
+            cmbAnimateMode.SelectedIndex = 1;
         }
 
         private void button1_Click(object sender, EventArgs e)

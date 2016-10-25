@@ -38,9 +38,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNext = new System.Windows.Forms.Button();
             this.btnNext10 = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbAnimateMode = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -133,33 +135,35 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbAnimateMode);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnNext10);
             this.groupBox2.Controls.Add(this.btnNext);
             this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(730, 232);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(171, 158);
+            this.groupBox2.Size = new System.Drawing.Size(171, 227);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
             // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(6, 63);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 38);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "Next++";
-            this.btnNext.UseVisualStyleBackColor = true;
-            // 
             // btnNext10
             // 
-            this.btnNext10.Location = new System.Drawing.Point(6, 107);
+            this.btnNext10.Location = new System.Drawing.Point(6, 176);
             this.btnNext10.Name = "btnNext10";
             this.btnNext10.Size = new System.Drawing.Size(101, 38);
             this.btnNext10.TabIndex = 3;
             this.btnNext10.Text = "Next +=10";
             this.btnNext10.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(6, 132);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(101, 38);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "Next++";
+            this.btnNext.UseVisualStyleBackColor = true;
             // 
             // btnAbout
             // 
@@ -170,6 +174,24 @@
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Animate mode";
+            // 
+            // cmbAnimateMode
+            // 
+            this.cmbAnimateMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAnimateMode.FormattingEnabled = true;
+            this.cmbAnimateMode.Location = new System.Drawing.Point(9, 91);
+            this.cmbAnimateMode.Name = "cmbAnimateMode";
+            this.cmbAnimateMode.Size = new System.Drawing.Size(142, 21);
+            this.cmbAnimateMode.TabIndex = 5;
             // 
             // frmMain
             // 
@@ -192,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,6 +235,8 @@
         private System.Windows.Forms.Button btnNext10;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.ComboBox cmbAnimateMode;
+        private System.Windows.Forms.Label label2;
     }
 }
 
