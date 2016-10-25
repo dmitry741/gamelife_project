@@ -17,12 +17,13 @@ namespace ConwaysGameLife
         }
 
         Bitmap m_bitmap = null;
+        DrawingGrid m_grid = new DrawingGrid(true);
 
         #region === private ===
 
         void RenderMap(Graphics g)
         {
-
+            m_grid.Render(g);
         }
 
         void Render()
@@ -49,6 +50,9 @@ namespace ConwaysGameLife
         private void frmMain_Load(object sender, EventArgs e)
         {
             pictureBox1.BackColor = Color.White;
+
+            m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,17 +68,16 @@ namespace ConwaysGameLife
 
         private void pictureBox1_SizeChanged(object sender, EventArgs e)
         {
-            m_bitmap = null;
-
-            if (this.Width > 0 && this.Height > 0)
+            if (pictureBox1.Width > 0 && pictureBox1.Height > 0)
             {
-                m_bitmap = new Bitmap(this.Width, this.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
             }
         }
 
         private void frmMain_Paint(object sender, PaintEventArgs e)
         {
-            RenderMap(e.Graphics);
+            Render();
         }
     }
 }
