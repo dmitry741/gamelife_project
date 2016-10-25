@@ -16,6 +16,8 @@ namespace ConwaysGameLife
             InitializeComponent();
         }
 
+        Bitmap m_bitmap = null;
+
         #region === private ===
 
         void Render(Graphics g)
