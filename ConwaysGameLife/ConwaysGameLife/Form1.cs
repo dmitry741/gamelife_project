@@ -20,9 +20,28 @@ namespace ConwaysGameLife
 
         #region === private ===
 
-        void Render(Graphics g)
+        void RenderMap(Graphics g)
         {
 
+        }
+
+        void Render()
+        {
+            // check for valid bitmap
+            if (m_bitmap == null)
+                return;
+
+            // create new graphics object
+            Graphics g = Graphics.FromImage(m_bitmap);
+
+            // clear content
+            g.Clear(Color.White);
+
+            // render the current map
+            RenderMap(g);
+
+            // "BitBlt"
+            pictureBox1.Image = m_bitmap;
         }
 
         #endregion
@@ -41,6 +60,21 @@ namespace ConwaysGameLife
         {
             frmAbout dlg = new frmAbout();
             dlg.ShowDialog();
+        }
+
+        private void pictureBox1_SizeChanged(object sender, EventArgs e)
+        {
+            m_bitmap = null;
+
+            if (this.Width > 0 && this.Height > 0)
+            {
+                m_bitmap = new Bitmap(this.Width, this.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            }
+        }
+
+        private void frmMain_Paint(object sender, PaintEventArgs e)
+        {
+            RenderMap(e.Graphics);
         }
     }
 }

@@ -53,6 +53,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(706, 706);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
             // 
             // btnStart
             // 
@@ -187,6 +188,7 @@
             this.Name = "frmMain";
             this.Text = " Conway\'s Game of Life";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
