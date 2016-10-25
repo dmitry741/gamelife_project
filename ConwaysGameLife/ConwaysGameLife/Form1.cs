@@ -18,12 +18,35 @@ namespace ConwaysGameLife
 
         Bitmap m_bitmap = null;
         DrawingGrid m_grid = new DrawingGrid(true);
+        int[,] m_map = null;
 
         #region === private ===
 
         void RenderMap(Graphics g)
         {
+            // render grid
             m_grid.Render(g);
+
+            // render map
+            Brush brushOld = new SolidBrush(Color.Red);
+            Brush brushYoung = new SolidBrush(Color.DarkGreen);
+
+            for (int i = 0; i < m_grid.gridSizeX; i++)
+            {
+                for (int j = 0; j < m_grid.gridSizeY; j++)
+                {
+                    if (m_map[i, j] == 0)
+                        continue;
+
+                    PointF point = m_grid.GetDrawingPoint(i, j);
+                    RectangleF r = new RectangleF(point.X, point.Y, m_grid.size, m_grid.size);
+
+                    if (m_map[i, j] == 1)
+                        g.FillEllipse(brushOld, r);
+                    else
+                        g.FillEllipse(brushYoung, r);
+                }
+            }
         }
 
         void Render()
@@ -63,6 +86,12 @@ namespace ConwaysGameLife
             cmbAnimateMode.Items.Add("Normal");
             cmbAnimateMode.Items.Add("Slow");
             cmbAnimateMode.SelectedIndex = 1;
+
+            m_map = new int[m_grid.gridSizeX, m_grid.gridSizeY];
+            Array.Clear(m_map, 0, m_map.Length);
+
+            m_map[1, 1] = 1;
+            m_map[2, 2] = 2;
         }
 
         private void button1_Click(object sender, EventArgs e)

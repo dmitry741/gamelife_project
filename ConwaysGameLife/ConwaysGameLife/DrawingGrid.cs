@@ -58,10 +58,11 @@ namespace ConwaysGameLife
                 }
             }
 
-            float d1 = Math.Abs(X - (N1 * size + offset));
-            float d2 = Math.Abs(X - (N2 * size + offset));
+            //float d1 = Math.Abs(X - (N1 * size + offset));
+            //float d2 = Math.Abs(X - (N2 * size + offset));
 
-            x1 = ((d1 < d2) ? N1 : N2) * size + offset;
+            //x1 = ((d1 < d2) ? N1 : N2) * size + offset;
+            x1 = N1 * size + offset;
 
             return Convert.ToInt32(x1);
         }
@@ -107,9 +108,27 @@ namespace ConwaysGameLife
             return new PointF(x1, y1);
         }
 
-        public PointF GetPoint(float X, float Y)
+        public PointF GetDrawingPoint(int X, int Y)
         {
-            return GetPoint((int)X, (int)Y);
+            return new PointF(m_xOffset + X * size, m_yOffset + Y * size);
+        }
+
+        public int gridSizeX
+        {
+            get
+            {
+                float s = (rectangle.Width - xOffset) / size;
+                return Convert.ToInt32(s);
+            }
+        }
+
+        public int gridSizeY
+        {
+            get
+            {
+                float s = (rectangle.Height - yOffset) / size;
+                return Convert.ToInt32(s);
+            }
         }
 
         public void Render(Graphics g)
