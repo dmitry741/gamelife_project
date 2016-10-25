@@ -32,11 +32,18 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSceneMode = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.frmSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnNext10 = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -49,9 +56,9 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(724, 84);
+            this.btnStart.Location = new System.Drawing.Point(6, 19);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(124, 38);
+            this.btnStart.Size = new System.Drawing.Size(101, 38);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -74,55 +81,106 @@
             this.cmbSceneMode.Size = new System.Drawing.Size(177, 21);
             this.cmbSceneMode.TabIndex = 3;
             // 
-            // button1
+            // btnExit
             // 
-            this.button1.Location = new System.Drawing.Point(777, 680);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(724, 128);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(124, 38);
-            this.btnStop.TabIndex = 5;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(798, 680);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(101, 38);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmSave
             // 
-            this.frmSave.Location = new System.Drawing.Point(724, 190);
+            this.frmSave.Location = new System.Drawing.Point(6, 19);
             this.frmSave.Name = "frmSave";
-            this.frmSave.Size = new System.Drawing.Size(124, 38);
+            this.frmSave.Size = new System.Drawing.Size(101, 38);
             this.frmSave.TabIndex = 6;
             this.frmSave.Text = "Save map...";
             this.frmSave.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(724, 234);
+            this.button2.Location = new System.Drawing.Point(6, 63);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 38);
+            this.button2.Size = new System.Drawing.Size(101, 38);
             this.button2.TabIndex = 7;
             this.button2.Text = "Load map...";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.frmSave);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Location = new System.Drawing.Point(724, 70);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(177, 156);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Map";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 107);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 38);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Random";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnNext10);
+            this.groupBox2.Controls.Add(this.btnNext);
+            this.groupBox2.Controls.Add(this.btnStart);
+            this.groupBox2.Location = new System.Drawing.Point(730, 232);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(171, 158);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Game";
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(6, 63);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(101, 38);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "Next++";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnNext10
+            // 
+            this.btnNext10.Location = new System.Drawing.Point(6, 107);
+            this.btnNext10.Name = "btnNext10";
+            this.btnNext10.Size = new System.Drawing.Size(101, 38);
+            this.btnNext10.TabIndex = 3;
+            this.btnNext10.Text = "Next +=10";
+            this.btnNext10.UseVisualStyleBackColor = true;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Location = new System.Drawing.Point(798, 636);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(101, 38);
+            this.btnAbout.TabIndex = 10;
+            this.btnAbout.Text = "About...";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 730);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.frmSave);
-            this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(911, 730);
+            this.Controls.Add(this.btnAbout);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.cmbSceneMode);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -130,6 +188,8 @@
             this.Text = " Conway\'s Game of Life";
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,10 +201,15 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSceneMode;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button frmSave;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnNext10;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnAbout;
     }
 }
 

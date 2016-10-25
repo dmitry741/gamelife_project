@@ -25,5 +25,11 @@ namespace ConwaysGameLife
         {
             Close();
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout dlg = new frmAbout();
+            dlg.ShowDialog();
+        }
     }
 }
