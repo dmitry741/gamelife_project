@@ -32,4 +32,27 @@ namespace ConwaysGameLife
             return status;
         }
     }
+
+    class MyLifeMyRules : ILifeRule
+    {
+        public int GetCellStatuc(int neighbors, int currentStatus)
+        {
+            // 0 -no cell
+            // 1 - new cell
+            // 2 - old cell
+
+            int status;
+
+            if (currentStatus == 0)
+            {
+                status = (neighbors == 2) ? 1 : 0;
+            }
+            else
+            {
+                status = (neighbors == 1 || neighbors == 2) ? 2 : 0;
+            }
+
+            return status;
+        }
+    }
 }

@@ -24,10 +24,20 @@ namespace ConwaysGameLife
         int[,] m_tempMap = null;
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
         int m_currentRulesIndex = 0;
+        Timer m_timer = new Timer();
+        List<Control> m_controlsForDisabling = new List<Control>();
 
         #endregion
 
         #region === private ===
+
+        void EnableControls(bool b)
+        {
+            foreach (Control c in m_controlsForDisabling)
+            {
+                c.Enabled = b;
+            }
+        }
 
         void RenderMap(Graphics g)
         {
@@ -145,7 +155,7 @@ namespace ConwaysGameLife
             cmbSceneMode.Items.Add("View");
             cmbSceneMode.Items.Add("Add cell");
             cmbSceneMode.Items.Add("Remove cell");
-            cmbSceneMode.SelectedIndex = 0;
+            cmbSceneMode.SelectedIndex = 1;
 
             cmbAnimateMode.Items.Add("Fast");
             cmbAnimateMode.Items.Add("Normal");
@@ -157,6 +167,20 @@ namespace ConwaysGameLife
             Array.Clear(m_map, 0, m_map.Length);
 
             m_lifeRules.Add(new ClassicConwaysRules());
+            m_lifeRules.Add(new MyLifeMyRules());
+
+            m_controlsForDisabling.Add(btnSave);
+            m_controlsForDisabling.Add(btnLoad);
+            m_controlsForDisabling.Add(btnRandom);
+            m_controlsForDisabling.Add(btnClear);
+
+            m_timer.Tick += timer_Tick;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Next();
+            Render();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -243,6 +267,23 @@ namespace ConwaysGameLife
             }
 
             Render();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if (m_timer.Enabled)
+            {
+                m_timer.Stop();
+                btnStart.Text = "Start";
+                EnableControls(true);
+            }
+            else
+            {
+                btnStart.Text = "Stop";
+                EnableControls(false);
+                m_timer.Interval = 500;
+                m_timer.Start();
+            }
         }
     }
 }
