@@ -231,9 +231,17 @@ namespace ConwaysGameLife
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int n = GetNeighbors(1, 1);
-
             Next();
+            Render();
+        }
+
+        private void btnNext10_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Next();
+            }
+
             Render();
         }
     }

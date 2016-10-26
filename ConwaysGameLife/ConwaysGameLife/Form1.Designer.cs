@@ -179,6 +179,7 @@
             this.btnNext10.TabIndex = 3;
             this.btnNext10.Text = "Next +=10";
             this.btnNext10.UseVisualStyleBackColor = true;
+            this.btnNext10.Click += new System.EventHandler(this.btnNext10_Click);
             // 
             // btnNext
             // 
