@@ -7,20 +7,29 @@ namespace ConwaysGameLife
 {
     interface ILifeRule
     {
-        int NewCell(int neighbors);
-        int ContinueLife(int neighbors);
+        int GetCellStatuc(int neighbors, int currentStatus);
     }
 
     class ClassicConwaysRules : ILifeRule
     {
-        public int NewCell(int neighbors)
+        public int GetCellStatuc(int neighbors, int currentStatus)
         {
-            return (neighbors == 3) ? 1 : 0;
-        }
+            // 0 -no cell
+            // 1 - new cell
+            // 2 - old cell
 
-        public int ContinueLife(int neighbors)
-        {
-            return (neighbors == 2 || neighbors == 3) ? 2 : 0;
+            int status;
+
+            if (currentStatus == 0)
+            {
+                status = (neighbors == 3) ? 1 : 0;
+            }
+            else
+            {
+                status = (neighbors == 2 || neighbors == 3) ? 2 : 0;
+            }
+
+            return status;
         }
     }
 }

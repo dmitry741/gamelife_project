@@ -126,7 +126,7 @@ namespace ConwaysGameLife
                 for (int j = 0; j < m_grid.gridSizeY; j++)
                 {
                     neighbors = GetNeighbors(i, j);
-                    m_tempMap[i, j] = (m_map[i, j] == 0) ? irules.NewCell(neighbors) : irules.ContinueLife(neighbors);
+                    m_tempMap[i, j] = irules.GetCellStatuc(neighbors, m_map[i, j]);
                 }
             }
 
