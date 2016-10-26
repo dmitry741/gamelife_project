@@ -149,5 +149,17 @@ namespace ConwaysGameLife
 
             Render();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure that you want to clear the map?";
+            string caption = " Conway's Game of Life";
+
+            if (MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Array.Clear(m_map, 0, m_map.Length);
+                Render();
+            }
+        }
     }
 }

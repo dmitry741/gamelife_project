@@ -45,6 +45,7 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbGridView = new System.Windows.Forms.CheckBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             this.btnStart.Location = new System.Drawing.Point(6, 19);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(101, 38);
+            this.btnStart.Size = new System.Drawing.Size(101, 33);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -90,9 +91,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(798, 680);
+            this.btnExit.Location = new System.Drawing.Point(800, 685);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(101, 38);
+            this.btnExit.Size = new System.Drawing.Size(101, 33);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -102,37 +103,38 @@
             // 
             this.frmSave.Location = new System.Drawing.Point(6, 19);
             this.frmSave.Name = "frmSave";
-            this.frmSave.Size = new System.Drawing.Size(101, 38);
+            this.frmSave.Size = new System.Drawing.Size(101, 33);
             this.frmSave.TabIndex = 6;
             this.frmSave.Text = "Save map...";
             this.frmSave.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 63);
+            this.button2.Location = new System.Drawing.Point(6, 58);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 38);
+            this.button2.Size = new System.Drawing.Size(101, 33);
             this.button2.TabIndex = 7;
             this.button2.Text = "Load map...";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.frmSave);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(724, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 156);
+            this.groupBox1.Size = new System.Drawing.Size(177, 182);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Map";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 107);
+            this.button3.Location = new System.Drawing.Point(6, 97);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 38);
+            this.button3.Size = new System.Drawing.Size(101, 33);
             this.button3.TabIndex = 6;
             this.button3.Text = "Random";
             this.button3.UseVisualStyleBackColor = true;
@@ -144,9 +146,9 @@
             this.groupBox2.Controls.Add(this.btnNext10);
             this.groupBox2.Controls.Add(this.btnNext);
             this.groupBox2.Controls.Add(this.btnStart);
-            this.groupBox2.Location = new System.Drawing.Point(730, 232);
+            this.groupBox2.Location = new System.Drawing.Point(724, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(171, 227);
+            this.groupBox2.Size = new System.Drawing.Size(171, 190);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
@@ -155,7 +157,7 @@
             // 
             this.cmbAnimateMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAnimateMode.FormattingEnabled = true;
-            this.cmbAnimateMode.Location = new System.Drawing.Point(9, 91);
+            this.cmbAnimateMode.Location = new System.Drawing.Point(9, 81);
             this.cmbAnimateMode.Name = "cmbAnimateMode";
             this.cmbAnimateMode.Size = new System.Drawing.Size(142, 21);
             this.cmbAnimateMode.TabIndex = 5;
@@ -163,7 +165,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 75);
+            this.label2.Location = new System.Drawing.Point(6, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 4;
@@ -171,27 +173,27 @@
             // 
             // btnNext10
             // 
-            this.btnNext10.Location = new System.Drawing.Point(6, 176);
+            this.btnNext10.Location = new System.Drawing.Point(9, 147);
             this.btnNext10.Name = "btnNext10";
-            this.btnNext10.Size = new System.Drawing.Size(101, 38);
+            this.btnNext10.Size = new System.Drawing.Size(101, 33);
             this.btnNext10.TabIndex = 3;
             this.btnNext10.Text = "Next +=10";
             this.btnNext10.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(6, 132);
+            this.btnNext.Location = new System.Drawing.Point(9, 108);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 38);
+            this.btnNext.Size = new System.Drawing.Size(101, 33);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next++";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(798, 636);
+            this.btnAbout.Location = new System.Drawing.Point(800, 646);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(101, 38);
+            this.btnAbout.Size = new System.Drawing.Size(101, 33);
             this.btnAbout.TabIndex = 10;
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -200,7 +202,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbGridView);
-            this.groupBox3.Location = new System.Drawing.Point(736, 465);
+            this.groupBox3.Location = new System.Drawing.Point(727, 454);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(163, 64);
             this.groupBox3.TabIndex = 11;
@@ -219,6 +221,16 @@
             this.cbGridView.Text = "Grid";
             this.cbGridView.UseVisualStyleBackColor = true;
             this.cbGridView.CheckedChanged += new System.EventHandler(this.cbGridView_CheckedChanged);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(6, 136);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(101, 33);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmMain
             // 
@@ -269,6 +281,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbGridView;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
