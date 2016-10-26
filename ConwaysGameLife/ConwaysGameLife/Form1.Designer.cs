@@ -64,7 +64,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(6, 19);
+            this.btnStart.Location = new System.Drawing.Point(9, 19);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(101, 33);
             this.btnStart.TabIndex = 1;
@@ -85,14 +85,14 @@
             // 
             this.cmbSceneMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSceneMode.FormattingEnabled = true;
-            this.cmbSceneMode.Location = new System.Drawing.Point(724, 28);
+            this.cmbSceneMode.Location = new System.Drawing.Point(730, 28);
             this.cmbSceneMode.Name = "cmbSceneMode";
-            this.cmbSceneMode.Size = new System.Drawing.Size(177, 21);
+            this.cmbSceneMode.Size = new System.Drawing.Size(101, 21);
             this.cmbSceneMode.TabIndex = 3;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(800, 685);
+            this.btnExit.Location = new System.Drawing.Point(733, 685);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(101, 33);
             this.btnExit.TabIndex = 4;
@@ -126,7 +126,7 @@
             this.groupBox1.Controls.Add(this.btnRandom);
             this.groupBox1.Location = new System.Drawing.Point(724, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 182);
+            this.groupBox1.Size = new System.Drawing.Size(121, 182);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Map";
@@ -147,8 +147,9 @@
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(101, 33);
             this.btnRandom.TabIndex = 6;
-            this.btnRandom.Text = "Random";
+            this.btnRandom.Text = "Random...";
             this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // groupBox2
             // 
@@ -159,7 +160,7 @@
             this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(724, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(171, 190);
+            this.groupBox2.Size = new System.Drawing.Size(121, 190);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
@@ -170,7 +171,7 @@
             this.cmbAnimateMode.FormattingEnabled = true;
             this.cmbAnimateMode.Location = new System.Drawing.Point(9, 81);
             this.cmbAnimateMode.Name = "cmbAnimateMode";
-            this.cmbAnimateMode.Size = new System.Drawing.Size(142, 21);
+            this.cmbAnimateMode.Size = new System.Drawing.Size(101, 21);
             this.cmbAnimateMode.TabIndex = 5;
             this.cmbAnimateMode.SelectedIndexChanged += new System.EventHandler(this.cmbAnimateMode_SelectedIndexChanged);
             // 
@@ -205,7 +206,7 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(800, 646);
+            this.btnAbout.Location = new System.Drawing.Point(733, 646);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(101, 33);
             this.btnAbout.TabIndex = 10;
@@ -218,7 +219,7 @@
             this.groupBox3.Controls.Add(this.cbGridView);
             this.groupBox3.Location = new System.Drawing.Point(727, 454);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(163, 64);
+            this.groupBox3.Size = new System.Drawing.Size(121, 64);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "View";
@@ -240,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 730);
+            this.ClientSize = new System.Drawing.Size(853, 730);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.groupBox2);

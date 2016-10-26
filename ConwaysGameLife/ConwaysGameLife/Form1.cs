@@ -299,6 +299,13 @@ namespace ConwaysGameLife
                 m_timer.Start();
             }
         }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            frmPresetMap dlg = new frmPresetMap();
+
+            dlg.ShowDialog();
+        }
     }
 
     class PresetInterval

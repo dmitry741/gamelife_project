@@ -57,6 +57,12 @@
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPresetMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPresetMap.Designer.cs">
+      <DependentUpon>frmPresetMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="LifeRules.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresetMap.resx">
+      <DependentUpon>frmPresetMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
