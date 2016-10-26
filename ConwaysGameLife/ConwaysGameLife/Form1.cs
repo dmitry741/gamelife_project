@@ -118,5 +118,11 @@ namespace ConwaysGameLife
         {
             Render();
         }
+
+        private void cbGridView_CheckedChanged(object sender, EventArgs e)
+        {
+            m_grid.visible = cbGridView.Checked;
+            Render();
+        }
     }
 }

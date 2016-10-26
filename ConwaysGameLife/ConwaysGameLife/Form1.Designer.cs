@@ -38,14 +38,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbAnimateMode = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnNext10 = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbAnimateMode = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbGridView = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -147,6 +150,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
             // 
+            // cmbAnimateMode
+            // 
+            this.cmbAnimateMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAnimateMode.FormattingEnabled = true;
+            this.cmbAnimateMode.Location = new System.Drawing.Point(9, 91);
+            this.cmbAnimateMode.Name = "cmbAnimateMode";
+            this.cmbAnimateMode.Size = new System.Drawing.Size(142, 21);
+            this.cmbAnimateMode.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Animate mode";
+            // 
             // btnNext10
             // 
             this.btnNext10.Location = new System.Drawing.Point(6, 176);
@@ -175,29 +196,35 @@
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
-            // label2
+            // groupBox3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Animate mode";
+            this.groupBox3.Controls.Add(this.cbGridView);
+            this.groupBox3.Location = new System.Drawing.Point(736, 465);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(163, 64);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "View";
             // 
-            // cmbAnimateMode
+            // cbGridView
             // 
-            this.cmbAnimateMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAnimateMode.FormattingEnabled = true;
-            this.cmbAnimateMode.Location = new System.Drawing.Point(9, 91);
-            this.cmbAnimateMode.Name = "cmbAnimateMode";
-            this.cmbAnimateMode.Size = new System.Drawing.Size(142, 21);
-            this.cmbAnimateMode.TabIndex = 5;
+            this.cbGridView.AutoSize = true;
+            this.cbGridView.Checked = true;
+            this.cbGridView.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbGridView.Location = new System.Drawing.Point(6, 19);
+            this.cbGridView.Name = "cbGridView";
+            this.cbGridView.Size = new System.Drawing.Size(45, 17);
+            this.cbGridView.TabIndex = 0;
+            this.cbGridView.Text = "Grid";
+            this.cbGridView.UseVisualStyleBackColor = true;
+            this.cbGridView.CheckedChanged += new System.EventHandler(this.cbGridView_CheckedChanged);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 730);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -215,6 +242,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,6 +266,8 @@
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.ComboBox cmbAnimateMode;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox cbGridView;
     }
 }
 

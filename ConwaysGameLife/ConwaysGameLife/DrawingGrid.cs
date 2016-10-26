@@ -21,7 +21,7 @@ namespace ConwaysGameLife
         Rectangle m_rectangle = new Rectangle();
 
         const int c_renderSize = 2;
-        const int c_defaultSize = 16;
+        const int c_defaultSize = 14;
 
         #region === private ===
 
