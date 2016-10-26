@@ -16,9 +16,16 @@ namespace ConwaysGameLife
             InitializeComponent();
         }
 
+        #region === members ===
+
         Bitmap m_bitmap = null;
         DrawingGrid m_grid = new DrawingGrid(true);
         int[,] m_map = null;
+        int[,] m_tempMap = null;
+        List<ILifeRule> m_lifeRules = new List<ILifeRule>();
+        int m_currentRulesIndex = 0;
+
+        #endregion
 
         #region === private ===
 
@@ -70,6 +77,64 @@ namespace ConwaysGameLife
 
         #endregion
 
+        #region == map ===
+
+        int GetNeighbors(int X, int Y)
+        {
+            int indexX, indexY;
+            int counter = 0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                indexX = X - 1 + i;
+
+                if (indexX < 0)
+                    continue;
+
+                if (indexX >= m_grid.gridSizeX)
+                    break;
+
+                for (int j = 0; j < 3; j++)
+                {
+                    if (i == 1 && j == 1)
+                        continue;
+
+                    indexY = Y - 1 + j;
+
+                    if (indexY < 0)
+                        continue;
+
+                    if (indexY >= m_grid.gridSizeY)
+                        break;
+
+                    if (m_map[indexX, indexY] > 0)
+                        counter++;
+                }
+            }
+
+            return counter;
+        }
+
+        void Next()
+        {
+            ILifeRule irules = m_lifeRules[m_currentRulesIndex];
+            int neighbors;
+            Array.Clear(m_tempMap, 0, m_tempMap.Length);
+
+            for (int i = 0; i < m_grid.gridSizeX; i++)
+            {
+                for (int j = 0; j < m_grid.gridSizeY; j++)
+                {
+                    neighbors = GetNeighbors(i, j);
+                    m_tempMap[i, j] = (m_map[i, j] == 0) ? irules.NewCell(neighbors) : irules.ContinueLife(neighbors);
+                }
+            }
+
+            Array.Copy(m_tempMap, m_map, m_map.Length);
+        }
+
+        #endregion
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             pictureBox1.BackColor = Color.White;
@@ -88,10 +153,10 @@ namespace ConwaysGameLife
             cmbAnimateMode.SelectedIndex = 1;
 
             m_map = new int[m_grid.gridSizeX, m_grid.gridSizeY];
+            m_tempMap = new int[m_grid.gridSizeX, m_grid.gridSizeY];
             Array.Clear(m_map, 0, m_map.Length);
 
-            m_map[1, 1] = 1;
-            m_map[2, 2] = 2;
+            m_lifeRules.Add(new ClassicConwaysRules());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -111,6 +176,8 @@ namespace ConwaysGameLife
             {
                 m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
+                m_map = new int[m_grid.gridSizeX, m_grid.gridSizeY];
+                m_tempMap = new int[m_grid.gridSizeX, m_grid.gridSizeY];
             }
         }
 
@@ -160,6 +227,14 @@ namespace ConwaysGameLife
                 Array.Clear(m_map, 0, m_map.Length);
                 Render();
             }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int n = GetNeighbors(1, 1);
+
+            Next();
+            Render();
         }
     }
 }
