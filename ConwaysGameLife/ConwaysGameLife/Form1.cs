@@ -42,9 +42,9 @@ namespace ConwaysGameLife
                     RectangleF r = new RectangleF(point.X, point.Y, m_grid.size, m_grid.size);
 
                     if (m_map[i, j] == 1)
-                        g.FillEllipse(brushOld, r);
-                    else
                         g.FillEllipse(brushYoung, r);
+                    else
+                        g.FillEllipse(brushOld, r);
                 }
             }
         }
@@ -122,6 +122,31 @@ namespace ConwaysGameLife
         private void cbGridView_CheckedChanged(object sender, EventArgs e)
         {
             m_grid.visible = cbGridView.Checked;
+            Render();
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (cmbSceneMode.SelectedIndex == 0) // view
+                return;
+
+            Point point = m_grid.GetMapIndex(e.X, e.Y);
+
+            if (point.X >= m_grid.gridSizeX || point.Y >= m_grid.gridSizeY)
+                return;
+
+            if (cmbSceneMode.SelectedIndex == 1) // add new cell
+            {
+                if (m_map[point.X, point.Y] == 0)
+                {
+                    m_map[point.X, point.Y] = 1;
+                }
+            }
+            else // remove
+            {
+                m_map[point.X, point.Y] = 0;
+            }
+
             Render();
         }
     }

@@ -113,6 +113,14 @@ namespace ConwaysGameLife
             return new PointF(m_xOffset + X * size, m_yOffset + Y * size);
         }
 
+        public Point GetMapIndex(int X, int Y)
+        {
+            double _x = Math.Truncate((X - m_xOffset) / size);
+            double _y = Math.Truncate((Y - m_yOffset) / size);
+
+            return new Point(Convert.ToInt32(_x), Convert.ToInt32(_y));
+        }
+
         public int gridSizeX
         {
             get
