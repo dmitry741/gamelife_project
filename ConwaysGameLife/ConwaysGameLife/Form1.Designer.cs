@@ -172,6 +172,7 @@
             this.cmbAnimateMode.Name = "cmbAnimateMode";
             this.cmbAnimateMode.Size = new System.Drawing.Size(142, 21);
             this.cmbAnimateMode.TabIndex = 5;
+            this.cmbAnimateMode.SelectedIndexChanged += new System.EventHandler(this.cmbAnimateMode_SelectedIndexChanged);
             // 
             // label2
             // 

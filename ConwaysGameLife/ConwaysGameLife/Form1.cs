@@ -157,9 +157,9 @@ namespace ConwaysGameLife
             cmbSceneMode.Items.Add("Remove cell");
             cmbSceneMode.SelectedIndex = 1;
 
-            cmbAnimateMode.Items.Add("Fast");
-            cmbAnimateMode.Items.Add("Normal");
-            cmbAnimateMode.Items.Add("Slow");
+            cmbAnimateMode.Items.Add(new PresetInterval("Fast", 250));
+            cmbAnimateMode.Items.Add(new PresetInterval("Normal", 500));
+            cmbAnimateMode.Items.Add(new PresetInterval("Slow", 1000));
             cmbAnimateMode.SelectedIndex = 1;
 
             m_map = new int[m_grid.gridSizeX, m_grid.gridSizeY];
@@ -281,9 +281,40 @@ namespace ConwaysGameLife
             {
                 btnStart.Text = "Stop";
                 EnableControls(false);
-                m_timer.Interval = 500;
+
+                PresetInterval pi = cmbAnimateMode.SelectedItem as PresetInterval;
+                m_timer.Interval = pi.interval;
                 m_timer.Start();
             }
+        }
+
+        private void cmbAnimateMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (m_timer.Enabled)
+            {
+                m_timer.Stop();
+
+                PresetInterval pi = cmbAnimateMode.SelectedItem as PresetInterval;
+                m_timer.Interval = pi.interval;
+                m_timer.Start();
+            }
+        }
+    }
+
+    class PresetInterval
+    {
+        public string name = string.Empty;
+        public int interval = 500;
+
+        public PresetInterval(string _name, int _interval)
+        {
+            name = _name;
+            interval = _interval;
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 }
