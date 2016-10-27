@@ -18,56 +18,10 @@ namespace ConwaysGameLife
             m_visible = visible;
         }
 
-        Rectangle m_rectangle = new Rectangle();
+        Rectangle m_rectangle = Rectangle.Empty;
 
         const int c_renderSize = 2;
         const int c_defaultSize = 14;
-
-        #region === private ===
-
-        int GetValue(int X, int width, float offset)
-        {
-            if (X < 0)
-            {
-                return 0;
-            }
-
-            int N1 = 0;
-            int N2 = Convert.ToInt32(width / size);
-
-            if (X > width)
-            {
-                return Convert.ToInt32(N2 * size);
-            }
-
-            int N = 0;
-            float x1;
-
-            while (N2 - N1 > 1)
-            {
-                N = (N1 + N2) / 2;
-                x1 = N * size + offset;
-
-                if (x1 > X)
-                {
-                    N2 = N;
-                }
-                else
-                {
-                    N1 = N;
-                }
-            }
-
-            //float d1 = Math.Abs(X - (N1 * size + offset));
-            //float d2 = Math.Abs(X - (N2 * size + offset));
-
-            //x1 = ((d1 < d2) ? N1 : N2) * size + offset;
-            x1 = N1 * size + offset;
-
-            return Convert.ToInt32(x1);
-        }
-
-        #endregion
 
         #region === public ===       
 
@@ -98,14 +52,6 @@ namespace ConwaysGameLife
         public float size
         {
             get { return m_size; }
-        }
-
-        public PointF GetPoint(int X, int Y)
-        {
-            int x1 = GetValue(X, rectangle.Width, m_xOffset);
-            int y1 = GetValue(Y, rectangle.Height, m_yOffset);
-
-            return new PointF(x1, y1);
         }
 
         public PointF GetDrawingPoint(int X, int Y)

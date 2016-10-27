@@ -45,11 +45,11 @@ namespace ConwaysGameLife
 
             if (currentStatus == 0)
             {
-                status = (neighbors == 2) ? 1 : 0;
+                status = (neighbors == 3) ? 1 : 0;
             }
             else
             {
-                status = (neighbors == 1 || neighbors == 2) ? 2 : 0;
+                status = (neighbors == 3 || neighbors == 5) ? 2 : 0;
             }
 
             return status;

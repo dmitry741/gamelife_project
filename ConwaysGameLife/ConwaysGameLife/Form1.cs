@@ -143,6 +143,31 @@ namespace ConwaysGameLife
             Array.Copy(m_tempMap, m_map, m_map.Length);
         }
 
+        void CopyMap(int[,] map, int xStart, int yStart)
+        {
+            int xBound = map.GetUpperBound(0) + 1;
+            int yBound = map.GetUpperBound(1) + 1;
+            int xIndex, yIndex;
+
+            for (int i = 0; i < xBound; i++)
+            {
+                xIndex = xStart + i;
+
+                if (xIndex < 0 || xIndex >= m_grid.gridSizeX)
+                    continue;
+
+                for (int j = 0; j < yBound; j++)
+                {
+                    yIndex = yStart + j;
+
+                    if (yIndex < 0 || yIndex >= m_grid.gridSizeY)
+                        continue;
+
+                    m_map[xIndex, yIndex] = map[i, j];
+                }
+            }
+        }
+
         #endregion
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -175,6 +200,10 @@ namespace ConwaysGameLife
             m_controlsForDisabling.Add(btnClear);
 
             m_timer.Tick += timer_Tick;
+
+            int[,] map = PresetMaps.steamTrain;
+
+            CopyMap(map, 20, 20);
         }
 
         private void timer_Tick(object sender, EventArgs e)
