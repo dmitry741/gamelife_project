@@ -20,8 +20,7 @@ namespace ConwaysGameLife
 
         Bitmap m_bitmap = null;
         DrawingGrid m_grid = new DrawingGrid(true);
-        int[,] m_map = null;
-        int[,] m_tempMap = null;
+        Map m_map = new Map();
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
         int m_currentRulesIndex = 0;
         Timer m_timer = new Timer();
@@ -41,29 +40,8 @@ namespace ConwaysGameLife
 
         void RenderMap(Graphics g)
         {
-            // render grid
             m_grid.Render(g);
-
-            // render map
-            Brush brushOld = new SolidBrush(Color.Red);
-            Brush brushYoung = new SolidBrush(Color.DarkGreen);
-
-            for (int i = 0; i < m_grid.gridSizeX; i++)
-            {
-                for (int j = 0; j < m_grid.gridSizeY; j++)
-                {
-                    if (m_map[i, j] == 0)
-                        continue;
-
-                    PointF point = m_grid.GetDrawingPoint(i, j);
-                    RectangleF r = new RectangleF(point.X, point.Y, m_grid.size, m_grid.size);
-
-                    if (m_map[i, j] == 1)
-                        g.FillEllipse(brushYoung, r);
-                    else
-                        g.FillEllipse(brushOld, r);
-                }
-            }
+            m_map.Render(g, m_grid.size, m_grid.xOffset, m_grid.yOffset);
         }
 
         void Render()
@@ -87,94 +65,6 @@ namespace ConwaysGameLife
 
         #endregion
 
-        #region == map ===
-
-        int GetNeighbors(int X, int Y)
-        {
-            int indexX, indexY;
-            int counter = 0;
-
-            for (int i = 0; i < 3; i++)
-            {
-                indexX = X - 1 + i;
-
-                if (indexX < 0)
-                    continue;
-
-                if (indexX >= m_grid.gridSizeX)
-                    break;
-
-                for (int j = 0; j < 3; j++)
-                {
-                    if (i == 1 && j == 1)
-                        continue;
-
-                    indexY = Y - 1 + j;
-
-                    if (indexY < 0)
-                        continue;
-
-                    if (indexY >= m_grid.gridSizeY)
-                        break;
-
-                    if (m_map[indexX, indexY] > 0)
-                        counter++;
-                }
-            }
-
-            return counter;
-        }
-
-        void Next()
-        {
-            ILifeRule irules = m_lifeRules[m_currentRulesIndex];
-            int neighbors;
-            Array.Clear(m_tempMap, 0, m_tempMap.Length);
-
-            for (int i = 0; i < m_grid.gridSizeX; i++)
-            {
-                for (int j = 0; j < m_grid.gridSizeY; j++)
-                {
-                    neighbors = GetNeighbors(i, j);
-                    m_tempMap[i, j] = irules.GetCellStatuc(neighbors, m_map[i, j]);
-                }
-            }
-
-            Array.Copy(m_tempMap, m_map, m_map.Length);
-        }
-
-        void CopyMap(int[,] map, int xStart, int yStart)
-        {
-            int xBound = map.GetUpperBound(0) + 1;
-            int yBound = map.GetUpperBound(1) + 1;
-            int xIndex, yIndex;
-
-            for (int i = 0; i < xBound; i++)
-            {
-                xIndex = xStart + i;
-
-                if (xIndex < 0 || xIndex >= m_grid.gridSizeX)
-                    continue;
-
-                for (int j = 0; j < yBound; j++)
-                {
-                    yIndex = yStart + j;
-
-                    if (yIndex < 0 || yIndex >= m_grid.gridSizeY)
-                        continue;
-
-                    m_map[xIndex, yIndex] = map[i, j];
-                }
-            }
-        }
-
-        int[,] RandomMap()
-        {
-            return null;
-        }
-
-        #endregion
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             pictureBox1.BackColor = Color.White;
@@ -192,9 +82,7 @@ namespace ConwaysGameLife
             cmbAnimateMode.Items.Add(new PresetInterval("Slow", 1000));
             cmbAnimateMode.SelectedIndex = 1;
 
-            m_map = new int[m_grid.gridSizeX, m_grid.gridSizeY];
-            m_tempMap = new int[m_grid.gridSizeX, m_grid.gridSizeY];
-            Array.Clear(m_map, 0, m_map.Length);
+            m_map.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "New");
 
             m_lifeRules.Add(new ClassicConwaysRules());
             m_lifeRules.Add(new MyLifeMyRules());
@@ -205,15 +93,12 @@ namespace ConwaysGameLife
             m_controlsForDisabling.Add(btnClear);
 
             m_timer.Tick += timer_Tick;
-
-            int[,] map = PresetMaps.steamTrain;
-
-            CopyMap(map, 20, 10);
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            Next();
+            ILifeRule irules = m_lifeRules[m_currentRulesIndex];
+            m_map.Next(irules);
             Render();
         }
 
@@ -234,8 +119,7 @@ namespace ConwaysGameLife
             {
                 m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
-                m_map = new int[m_grid.gridSizeX, m_grid.gridSizeY];
-                m_tempMap = new int[m_grid.gridSizeX, m_grid.gridSizeY];
+                m_map.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "New");
             }
         }
 
@@ -262,14 +146,14 @@ namespace ConwaysGameLife
 
             if (cmbSceneMode.SelectedIndex == 1) // add new cell
             {
-                if (m_map[point.X, point.Y] == 0)
+                if (m_map.GetValue(point.X, point.Y) == 0)
                 {
-                    m_map[point.X, point.Y] = 1;
+                    m_map.SetValue(1, point.X, point.Y);
                 }
             }
             else // remove
             {
-                m_map[point.X, point.Y] = 0;
+                m_map.SetValue(0, point.X, point.Y);
             }
 
             Render();
@@ -282,22 +166,25 @@ namespace ConwaysGameLife
 
             if (MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                Array.Clear(m_map, 0, m_map.Length);
+                m_map.Clear();
                 Render();
             }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Next();
+            ILifeRule irules = m_lifeRules[m_currentRulesIndex];
+            m_map.Next(irules);
             Render();
         }
 
         private void btnNext10_Click(object sender, EventArgs e)
         {
+            ILifeRule irules = m_lifeRules[m_currentRulesIndex];
+
             for (int i = 0; i < 10; i++)
             {
-                Next();
+                m_map.Next(irules);
             }
 
             Render();
