@@ -54,5 +54,5 @@ namespace ConwaysGameLife
 
             return status;
         }
-    }
+    }       
 }

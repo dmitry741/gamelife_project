@@ -168,6 +168,11 @@ namespace ConwaysGameLife
             }
         }
 
+        int[,] RandomMap()
+        {
+            return null;
+        }
+
         #endregion
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -203,7 +208,7 @@ namespace ConwaysGameLife
 
             int[,] map = PresetMaps.steamTrain;
 
-            CopyMap(map, 20, 20);
+            CopyMap(map, 20, 10);
         }
 
         private void timer_Tick(object sender, EventArgs e)
