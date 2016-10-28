@@ -274,6 +274,7 @@ namespace ConwaysGameLife
             }
 
             m_map = new int[m_width, m_height];
+            m_tempMap = new int[m_width, m_height];
 
             for (int i = 0; i < m_width; i++)
             {

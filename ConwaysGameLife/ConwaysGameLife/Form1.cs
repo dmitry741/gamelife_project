@@ -73,8 +73,7 @@ namespace ConwaysGameLife
             m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
 
             cmbSceneMode.Items.Add("View");
-            cmbSceneMode.Items.Add("Add cell");
-            cmbSceneMode.Items.Add("Remove cell");
+            cmbSceneMode.Items.Add("Add/remove cell");
             cmbSceneMode.SelectedIndex = 1;
 
             cmbAnimateMode.Items.Add(new PresetInterval("Fast", 250));
@@ -144,17 +143,8 @@ namespace ConwaysGameLife
             if (point.X >= m_grid.gridSizeX || point.Y >= m_grid.gridSizeY)
                 return;
 
-            if (cmbSceneMode.SelectedIndex == 1) // add new cell
-            {
-                if (m_map.GetValue(point.X, point.Y) == 0)
-                {
-                    m_map.SetValue(1, point.X, point.Y);
-                }
-            }
-            else // remove
-            {
-                m_map.SetValue(0, point.X, point.Y);
-            }
+            int val = (m_map.GetValue(point.X, point.Y) == 0) ? 1 : 0;
+            m_map.SetValue(val, point.X, point.Y);
 
             Render();
         }
