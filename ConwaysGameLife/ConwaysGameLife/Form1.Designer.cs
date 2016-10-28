@@ -39,6 +39,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRandom = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbNext = new System.Windows.Forms.ComboBox();
             this.cmbAnimateMode = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnNext10 = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbGridView = new System.Windows.Forms.CheckBox();
+            this.btnSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -155,6 +157,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbNext);
             this.groupBox2.Controls.Add(this.cmbAnimateMode);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnNext10);
@@ -166,6 +169,15 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game";
+            // 
+            // cmbNext
+            // 
+            this.cmbNext.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNext.FormattingEnabled = true;
+            this.cmbNext.Location = new System.Drawing.Point(73, 154);
+            this.cmbNext.Name = "cmbNext";
+            this.cmbNext.Size = new System.Drawing.Size(37, 21);
+            this.cmbNext.TabIndex = 6;
             // 
             // cmbAnimateMode
             // 
@@ -190,9 +202,9 @@
             // 
             this.btnNext10.Location = new System.Drawing.Point(9, 147);
             this.btnNext10.Name = "btnNext10";
-            this.btnNext10.Size = new System.Drawing.Size(101, 33);
+            this.btnNext10.Size = new System.Drawing.Size(58, 33);
             this.btnNext10.TabIndex = 3;
-            this.btnNext10.Text = "Next +=10";
+            this.btnNext10.Text = "Next +=";
             this.btnNext10.UseVisualStyleBackColor = true;
             this.btnNext10.Click += new System.EventHandler(this.btnNext10_Click);
             // 
@@ -221,7 +233,7 @@
             this.groupBox3.Controls.Add(this.cbGridView);
             this.groupBox3.Location = new System.Drawing.Point(727, 454);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(121, 64);
+            this.groupBox3.Size = new System.Drawing.Size(121, 49);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "View";
@@ -239,11 +251,21 @@
             this.cbGridView.UseVisualStyleBackColor = true;
             this.cbGridView.CheckedChanged += new System.EventHandler(this.cbGridView_CheckedChanged);
             // 
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(733, 607);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(101, 33);
+            this.btnSettings.TabIndex = 12;
+            this.btnSettings.Text = "Settings...";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 730);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.groupBox2);
@@ -289,6 +311,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbGridView;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cmbNext;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

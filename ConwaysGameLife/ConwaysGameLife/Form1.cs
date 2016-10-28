@@ -91,6 +91,15 @@ namespace ConwaysGameLife
             m_controlsForDisabling.Add(btnRandom);
             m_controlsForDisabling.Add(btnClear);
 
+            int step = 2;
+
+            for (int i = 0; i < 6; i++, step <<= 1)
+            {
+                cmbNext.Items.Add(step);
+            }
+
+            cmbNext.SelectedIndex = 0;
+
             m_timer.Tick += timer_Tick;
         }
 
@@ -171,12 +180,8 @@ namespace ConwaysGameLife
         private void btnNext10_Click(object sender, EventArgs e)
         {
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
-
-            for (int i = 0; i < 10; i++)
-            {
-                m_map.Next(irules);
-            }
-
+            int steps = (int)cmbNext.SelectedItem;
+            m_map.Next(irules, steps);
             Render();
         }
 

@@ -158,6 +158,27 @@ namespace ConwaysGameLife
             Array.Copy(m_tempMap, m_map, m_map.Length);
         }
 
+        public void Next(ILifeRule irules, int count)
+        {
+            int neighbors;            
+
+            for (int index = 0; index < count; index++)
+            {
+                Array.Clear(m_tempMap, 0, m_tempMap.Length);
+
+                for (int i = 0; i < m_width; i++)
+                {
+                    for (int j = 0; j < m_height; j++)
+                    {
+                        neighbors = GetNeighbors(i, j);
+                        m_tempMap[i, j] = irules.GetCellStatuc(neighbors, m_map[i, j]);
+                    }
+                }
+
+                Array.Copy(m_tempMap, m_map, m_map.Length);
+            }
+        }
+
         public override string ToString()
         {
             return m_name;
