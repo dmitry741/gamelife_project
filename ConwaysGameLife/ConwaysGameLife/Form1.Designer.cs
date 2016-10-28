@@ -151,7 +151,7 @@
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(101, 33);
             this.btnRandom.TabIndex = 6;
-            this.btnRandom.Text = "Random...";
+            this.btnRandom.Text = "Preset maps...";
             this.btnRandom.UseVisualStyleBackColor = true;
             this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
@@ -259,6 +259,7 @@
             this.btnSettings.TabIndex = 12;
             this.btnSettings.Text = "Settings...";
             this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // frmMain
             // 

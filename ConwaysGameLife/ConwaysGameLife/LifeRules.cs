@@ -8,6 +8,7 @@ namespace ConwaysGameLife
     interface ILifeRule
     {
         int GetCellStatuc(int neighbors, int currentStatus);
+        bool user { get; }
     }
 
     class ClassicConwaysRules : ILifeRule
@@ -31,6 +32,8 @@ namespace ConwaysGameLife
 
             return status;
         }
+
+        public bool user => false;
     }
 
     class MyLifeMyRules : ILifeRule
@@ -54,5 +57,7 @@ namespace ConwaysGameLife
 
             return status;
         }
+
+        public bool user => true;
     }       
 }

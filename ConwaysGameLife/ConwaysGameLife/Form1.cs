@@ -245,6 +245,13 @@ namespace ConwaysGameLife
                 Render();
             }
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            frmSettings dlg = new frmSettings();
+
+            dlg.ShowDialog();
+        }
     }
 
     class PresetInterval
