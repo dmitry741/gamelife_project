@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Data;
+using System.Windows.Forms;
 
 namespace ConwaysGameLife
 {
@@ -195,6 +197,49 @@ namespace ConwaysGameLife
         static public bool operator !=(Map map1, Map map2)
         {
             return !(map1 == map2);
+        }
+
+        public void Save(string path)
+        {
+            DataTable dt = new DataTable("Map");
+
+            dt.Columns.Add("map", typeof(int[]));
+            dt.Columns.Add("width", typeof(int));
+            dt.Columns.Add("height", typeof(int));
+            dt.Columns.Add("name", typeof(string));
+
+            DataRow dr = dt.NewRow();
+
+            int[] map = new int[m_width * m_height];
+
+            for (int i = 0; i < m_width; i++)
+            {
+                for (int j = 0; j < m_height; j++)
+                {
+                    map[j + i * m_height] = m_map[i, j];
+                }
+            }
+
+            dr["map"] = map;
+            dr["width"] = m_width;
+            dr["height"] = m_height;
+            dr["name"] = m_name;
+
+            dt.Rows.Add(dr);
+
+            try
+            {
+                dt.WriteXml(path, XmlWriteMode.WriteSchema);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void Load(string path)
+        {
+            // TODO: add code here
         }
 
         #endregion

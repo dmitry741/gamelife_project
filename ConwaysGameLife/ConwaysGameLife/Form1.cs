@@ -227,6 +227,16 @@ namespace ConwaysGameLife
 
             dlg.ShowDialog();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                m_map.Save(dlg.FileName);
+            }
+        }
     }
 
     class PresetInterval
