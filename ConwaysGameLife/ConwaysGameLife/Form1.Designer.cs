@@ -118,6 +118,7 @@
             this.btnLoad.TabIndex = 7;
             this.btnLoad.Text = "Load map...";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // groupBox1
             // 

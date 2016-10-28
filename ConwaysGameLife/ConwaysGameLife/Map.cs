@@ -161,12 +161,7 @@ namespace ConwaysGameLife
         public override string ToString()
         {
             return m_name;
-        }
-
-        public string name
-        {
-            get { return m_name; }
-        }
+        }        
 
         static public bool operator ==(Map map1, Map map2)
         {
@@ -199,6 +194,24 @@ namespace ConwaysGameLife
             return !(map1 == map2);
         }
 
+        public override int GetHashCode()
+        {
+            return m_width + m_height;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Map))
+                return false;
+
+            return (obj as Map == this);
+        }
+
+        public string name
+        {
+            get { return m_name; }
+        }
+
         public void Save(string path)
         {
             DataTable dt = new DataTable("Map");
@@ -209,7 +222,6 @@ namespace ConwaysGameLife
             dt.Columns.Add("name", typeof(string));
 
             DataRow dr = dt.NewRow();
-
             int[] map = new int[m_width * m_height];
 
             for (int i = 0; i < m_width; i++)
@@ -220,10 +232,12 @@ namespace ConwaysGameLife
                 }
             }
 
-            dr["map"] = map;
-            dr["width"] = m_width;
-            dr["height"] = m_height;
-            dr["name"] = m_name;
+            int index = 0;
+
+            dr[index++] = map;
+            dr[index++] = m_width;
+            dr[index++] = m_height;
+            dr[index++] = m_name;
 
             dt.Rows.Add(dr);
 
@@ -239,7 +253,35 @@ namespace ConwaysGameLife
 
         public void Load(string path)
         {
-            // TODO: add code here
+            DataTable dt = new DataTable();
+            int[] map = null;
+            
+            try
+            {
+                dt.ReadXml(path);
+
+                DataRow dr = dt.Rows[0];
+                int index = 0;
+
+                map = (int[])dr[index++];
+                m_width = (int)dr[index++];
+                m_height = (int)dr[index++];
+                m_name = (string)dr[index++];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            m_map = new int[m_width, m_height];
+
+            for (int i = 0; i < m_width; i++)
+            {
+                for (int j = 0; j < m_height; j++)
+                {
+                    m_map[i, j] = map[j + i * m_height];
+                }
+            }
         }
 
         #endregion

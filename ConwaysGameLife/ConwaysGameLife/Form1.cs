@@ -231,10 +231,23 @@ namespace ConwaysGameLife
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Life map files (*.lmf)|*.lmf|All files (*.*)|*.*";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 m_map.Save(dlg.FileName);
+            }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Life map files (*.lmf)|*.lmf|All files (*.*)|*.*";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                m_map.Load(dlg.FileName);
+                Render();
             }
         }
     }
