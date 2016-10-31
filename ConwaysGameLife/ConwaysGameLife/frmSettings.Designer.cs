@@ -49,14 +49,14 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSaveString = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(477, 360);
+            this.btnOk.Location = new System.Drawing.Point(480, 357);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(101, 33);
             this.btnOk.TabIndex = 0;
@@ -67,7 +67,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(370, 360);
+            this.btnCancel.Location = new System.Drawing.Point(373, 357);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 33);
             this.btnCancel.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblSaveString);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnAdd);
@@ -272,21 +272,21 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblSaveString
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(11, 304);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "* Press Save button to save life rules.";
+            this.lblSaveString.AutoSize = true;
+            this.lblSaveString.ForeColor = System.Drawing.Color.Red;
+            this.lblSaveString.Location = new System.Drawing.Point(11, 304);
+            this.lblSaveString.Name = "lblSaveString";
+            this.lblSaveString.Size = new System.Drawing.Size(183, 13);
+            this.lblSaveString.TabIndex = 21;
+            this.lblSaveString.Text = "* Press Save button to save life rules.";
             // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 405);
+            this.ClientSize = new System.Drawing.Size(590, 402);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -322,7 +322,7 @@
         private System.Windows.Forms.ComboBox cmbCellGoOnNumber2;
         private System.Windows.Forms.ComboBox cmbCellGoOnNumber1;
         private System.Windows.Forms.ComboBox cmbCellGoOnSign1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSaveString;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;

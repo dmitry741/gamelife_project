@@ -274,6 +274,6 @@ namespace ConwaysGameLife
 
     class Utility
     {
-        static public string[] Sings => new string[] { "=", ">", "<" };
+        static public string[] sings => new string[] { "=", ">", "<" };
     }
 }
