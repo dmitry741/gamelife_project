@@ -151,7 +151,7 @@ namespace ConwaysGameLife
                 for (int j = 0; j < m_height; j++)
                 {
                     neighbors = GetNeighbors(i, j);
-                    m_tempMap[i, j] = irules.GetCellStatuc(neighbors, m_map[i, j]);
+                    m_tempMap[i, j] = irules.GetCellStatus(neighbors, m_map[i, j]);
                 }
             }
 
@@ -171,7 +171,7 @@ namespace ConwaysGameLife
                     for (int j = 0; j < m_height; j++)
                     {
                         neighbors = GetNeighbors(i, j);
-                        m_tempMap[i, j] = irules.GetCellStatuc(neighbors, m_map[i, j]);
+                        m_tempMap[i, j] = irules.GetCellStatus(neighbors, m_map[i, j]);
                     }
                 }
 

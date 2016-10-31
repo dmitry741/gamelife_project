@@ -22,7 +22,7 @@ namespace ConwaysGameLife
         DrawingGrid m_grid = new DrawingGrid(true);
         Map m_map = new Map();
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
-        int m_currentRulesIndex = 0;
+        int m_currentRulesIndex = 2;
         Timer m_timer = new Timer();
         List<Control> m_controlsForDisabling = new List<Control>();
 
@@ -85,17 +85,16 @@ namespace ConwaysGameLife
 
             m_lifeRules.Add(new ClassicConwaysRules());
             m_lifeRules.Add(new MyLifeMyRules());
+            m_lifeRules.Add(new UserLifeRules());
 
             m_controlsForDisabling.Add(btnSave);
             m_controlsForDisabling.Add(btnLoad);
             m_controlsForDisabling.Add(btnRandom);
             m_controlsForDisabling.Add(btnClear);
 
-            int step = 2;
-
-            for (int i = 0; i < 6; i++, step <<= 1)
+            for (int i = 0; i < 6; i++)
             {
-                cmbNext.Items.Add(step);
+                cmbNext.Items.Add(2 << i);
             }
 
             cmbNext.SelectedIndex = 0;
@@ -250,6 +249,8 @@ namespace ConwaysGameLife
         {
             frmSettings dlg = new frmSettings();
 
+            dlg.SetListLifeRules(ref m_lifeRules);
+            dlg.currentRulesIndex = m_currentRulesIndex;
             dlg.ShowDialog();
         }
     }
@@ -269,5 +270,10 @@ namespace ConwaysGameLife
         {
             return name;
         }
+    }
+
+    class Utility
+    {
+        static public string[] Sings => new string[] { "=", ">", "<" };
     }
 }
