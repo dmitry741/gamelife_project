@@ -24,7 +24,15 @@ namespace ConwaysGameLife
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (textBox1.Text.Length > 0)
+            {
+                m_description = textBox1.Text;
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Description is too short.");
+            }
         }
     }
 }

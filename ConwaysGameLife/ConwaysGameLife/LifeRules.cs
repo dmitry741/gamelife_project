@@ -90,6 +90,23 @@ namespace ConwaysGameLife
             cellGoOnSign2 = 0;
         }
 
+        public UserLifeRules(string d)
+        {
+            m_description = d;
+
+            newCellNeighbors1 = 3;
+            newCellSign1 = 0;
+            newCellOrEnable = false;
+            newCellNeighbors2 = 0;
+            newCellSign2 = 0;
+
+            cellGoOnNeighbors1 = 2;
+            cellGoOnSign1 = 0;
+            cellGoOnOrEnable = true;
+            cellGoOnNeighbors2 = 3;
+            cellGoOnSign2 = 0;
+        }
+
         private bool Condition(int Sign, int number1, int number2)
         {
             // 0 =, 1 >, 2 <

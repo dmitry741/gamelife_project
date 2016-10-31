@@ -148,5 +148,35 @@ namespace ConwaysGameLife
         {
             lblNewCellOr.Visible = cmbNewCellNumber2.Visible = cmbNewCellSign2.Visible = checkBoxOR1.Checked;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmRuleDescription dlg = new frmRuleDescription();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                UserLifeRules ulr = new UserLifeRules
+                {
+                    description = dlg.description
+                };
+
+                m_lifeRules.Add(ulr);
+                listBox1.Items.Add(ulr);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = listBox1.SelectedIndex;
+
+            if (selectedIndex < 0)
+                return;
+
+            m_lifeRules.RemoveAt(selectedIndex);
+            listBox1.Items.RemoveAt(selectedIndex);
+
+            if (listBox1.Items.Count > 0)
+                listBox1.SelectedIndex = 0;
+        }
     }
 }

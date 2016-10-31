@@ -54,11 +54,6 @@ namespace ConwaysGameLife
             get { return m_size; }
         }
 
-        public PointF GetDrawingPoint(int X, int Y)
-        {
-            return new PointF(m_xOffset + X * size, m_yOffset + Y * size);
-        }
-
         public Point GetMapIndex(int X, int Y)
         {
             double _x = Math.Truncate((X - m_xOffset) / size);
