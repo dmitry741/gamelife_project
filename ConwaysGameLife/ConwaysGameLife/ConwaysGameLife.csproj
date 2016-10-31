@@ -63,6 +63,12 @@
     <Compile Include="frmPresetMap.Designer.cs">
       <DependentUpon>frmPresetMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRuleDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRuleDescription.Designer.cs">
+      <DependentUpon>frmRuleDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPresetMap.resx">
       <DependentUpon>frmPresetMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRuleDescription.resx">
+      <DependentUpon>frmRuleDescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
