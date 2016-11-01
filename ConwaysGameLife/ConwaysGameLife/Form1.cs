@@ -106,6 +106,7 @@ namespace ConwaysGameLife
         {
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
             m_map.Next(irules);
+            lblCount.Text = m_map.cellCount.ToString();
             Render();
         }
 
@@ -153,6 +154,7 @@ namespace ConwaysGameLife
 
             int val = (m_map.GetValue(point.X, point.Y) == 0) ? 1 : 0;
             m_map.SetValue(val, point.X, point.Y);
+            lblCount.Text = m_map.cellCount.ToString();
 
             Render();
         }
@@ -173,6 +175,7 @@ namespace ConwaysGameLife
         {
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
             m_map.Next(irules);
+            lblCount.Text = m_map.cellCount.ToString();
             Render();
         }
 
@@ -241,6 +244,7 @@ namespace ConwaysGameLife
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 m_map.Load(dlg.FileName);
+                lblCount.Text = m_map.cellCount.ToString();
                 Render();
             }
         }

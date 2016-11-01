@@ -185,7 +185,7 @@ namespace ConwaysGameLife
             }
             else
             {
-                MessageBox.Show("This rule is built-in rule. Cannot remove it.");
+                MessageBox.Show("This rule is built-in. Cannot remove it.");
             }
         }
 

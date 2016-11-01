@@ -69,6 +69,33 @@ namespace ConwaysGameLife
 
         #region === public ===
 
+        static Map CreateFromOne(Map map)
+        {
+            Map m = new Map(map.m_width, map.m_height, map.m_name);
+            Array.Copy(map.m_map, m.m_map, map.m_map.Length);
+
+            return m;
+        }
+
+        public int cellCount
+        {
+            get
+            {
+                int count = 0;
+
+                for (int i = 0; i < m_width; i++)
+                {
+                    for (int j = 0; j < m_height; j++)
+                    {
+                        if (m_map[i, j] > 0)
+                            count++;
+                    }
+                }
+
+                return count;
+            }
+        }
+
         public void CreateEmptyMap(int _width, int _height, string _name)
         {
             m_width = _width;
