@@ -17,7 +17,7 @@ namespace ConwaysGameLife
         }
 
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
-        int m_currentRulesIndex = 2;
+        int m_currentRulesIndex = 0;
 
         public void SetListLifeRules(ref List<ILifeRule> lifeRules)
         {
@@ -33,12 +33,7 @@ namespace ConwaysGameLife
         private void btnOk_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
+        }       
 
         private void frmSettings_Load(object sender, EventArgs e)
         {
@@ -121,7 +116,6 @@ namespace ConwaysGameLife
                 }
 
                 checkBoxOR1.Visible = checkBoxOR2.Visible = true;
-                btnSave.Visible = true;
                 label1.Visible = label3.Visible = true;
             }
             else
@@ -136,17 +130,21 @@ namespace ConwaysGameLife
                 cmbCellGoOnSign2.Visible = cmbCellGoOnNumber2.Visible = false;
 
                 checkBoxOR1.Visible = checkBoxOR2.Visible = false;
-                btnSave.Visible = false;
-
                 label1.Visible = label3.Visible = false;
             }
-
-            lblSaveString.Visible = false;
         }
 
         private void checkBoxOR1_CheckedChanged(object sender, EventArgs e)
         {
             lblNewCellOr.Visible = cmbNewCellNumber2.Visible = cmbNewCellSign2.Visible = checkBoxOR1.Checked;
+
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.newCellOrEnable = checkBoxOR1.Checked;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -172,11 +170,124 @@ namespace ConwaysGameLife
             if (selectedIndex < 0)
                 return;
 
-            m_lifeRules.RemoveAt(selectedIndex);
-            listBox1.Items.RemoveAt(selectedIndex);
+            ILifeRule lr = m_lifeRules[selectedIndex];
 
-            if (listBox1.Items.Count > 0)
-                listBox1.SelectedIndex = 0;
+            if (lr is UserLifeRules)
+            {
+                if (MessageBox.Show($"Are you sure that you want to remove rule: {lr}", "Game of life", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    m_lifeRules.RemoveAt(selectedIndex);
+                    listBox1.Items.RemoveAt(selectedIndex);
+
+                    if (listBox1.Items.Count > 0)
+                        listBox1.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                MessageBox.Show("This rule is built-in rule. Cannot remove it.");
+            }
+        }
+
+        private void cmbNewCellSign1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.newCellSign1 = cmbNewCellSign1.SelectedIndex;
+            }
+        }
+
+        private void cmbNewCellNumber1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.newCellNeighbors1 = cmbNewCellNumber1.SelectedIndex + 1;
+            }
+        }
+
+        private void cmbNewCellSign2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.newCellSign2 = cmbNewCellSign2.SelectedIndex;
+            }
+        }
+
+        private void cmbNewCellNumber2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.newCellNeighbors2 = cmbNewCellNumber2.SelectedIndex + 1;
+            }
+        }
+
+        private void cmbCellGoOnSign1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.cellGoOnSign1 = cmbCellGoOnSign1.SelectedIndex;
+            }
+        }
+
+        private void cmbCellGoOnSign2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.cellGoOnSign2 = cmbCellGoOnSign2.SelectedIndex;
+            }
+        }
+
+        private void cmbCellGoOnNumber1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.cellGoOnNeighbors1 = cmbCellGoOnNumber1.SelectedIndex + 1;
+            }
+        }
+
+        private void cmbCellGoOnNumber2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.cellGoOnNeighbors2 = cmbCellGoOnNumber2.SelectedIndex + 1;
+            }
+        }
+
+        private void checkBoxOR2_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCellGoOnOr.Visible = cmbCellGoOnSign2.Visible = cmbCellGoOnNumber2.Visible = checkBoxOR2.Checked;
+
+            ILifeRule lr = m_lifeRules[m_currentRulesIndex];
+
+            if (lr is UserLifeRules)
+            {
+                UserLifeRules ulr = lr as UserLifeRules;
+                ulr.cellGoOnOrEnable = checkBoxOR2.Checked;
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace ConwaysGameLife
         DrawingGrid m_grid = new DrawingGrid(true);
         Map m_map = new Map();
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
-        int m_currentRulesIndex = 2;
+        int m_currentRulesIndex = 0;
         Timer m_timer = new Timer();
         List<Control> m_controlsForDisabling = new List<Control>();
 
@@ -252,6 +252,8 @@ namespace ConwaysGameLife
             dlg.SetListLifeRules(ref m_lifeRules);
             dlg.currentRulesIndex = m_currentRulesIndex;
             dlg.ShowDialog();
+
+            m_currentRulesIndex = dlg.currentRulesIndex;
         }
     }
 
