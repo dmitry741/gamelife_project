@@ -167,6 +167,7 @@ namespace ConwaysGameLife
             if (MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 m_map.Clear();
+                lblCount.Text = "0";
                 Render();
             }
         }

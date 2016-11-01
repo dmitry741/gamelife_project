@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar1.Location = new System.Drawing.Point(677, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 436);
+            this.vScrollBar1.TabIndex = 0;
             // 
             // frmPresetMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 436);
+            this.Controls.Add(this.vScrollBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmPresetMap";
@@ -45,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

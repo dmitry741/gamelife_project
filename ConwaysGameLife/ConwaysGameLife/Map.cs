@@ -10,8 +10,8 @@ namespace ConwaysGameLife
 {
     class Map
     {
-        int[,] m_map;
-        int[,] m_tempMap;
+        int[] m_map;
+        int[] m_tempMap;
         int m_width, m_height;
         string m_name;
 
@@ -57,7 +57,7 @@ namespace ConwaysGameLife
                     if (indexY >= m_height)
                         break;
 
-                    if (m_map[indexX, indexY] > 0)
+                    if (m_map[indexY + indexX * m_height] > 0)
                         counter++;
                 }
             }
@@ -79,21 +79,7 @@ namespace ConwaysGameLife
 
         public int cellCount
         {
-            get
-            {
-                int count = 0;
-
-                for (int i = 0; i < m_width; i++)
-                {
-                    for (int j = 0; j < m_height; j++)
-                    {
-                        if (m_map[i, j] > 0)
-                            count++;
-                    }
-                }
-
-                return count;
-            }
+            get { return m_map.Count(x => x > 0); }
         }
 
         public void CreateEmptyMap(int _width, int _height, string _name)
@@ -102,8 +88,8 @@ namespace ConwaysGameLife
             m_height = _height;
             m_name = _name;
 
-            m_map = new int[m_width, m_height];
-            m_tempMap = new int[m_width, m_height];
+            m_map = new int[m_width * m_height];
+            m_tempMap = new int[m_width * m_height];
             Array.Clear(m_map, 0, m_map.Length);
         }
 
@@ -127,7 +113,7 @@ namespace ConwaysGameLife
                     if (yIndex < 0 || yIndex >= m_height)
                         continue;
 
-                    m_map[xIndex, yIndex] = map[i, j];
+                    m_map[yIndex + xIndex * m_height] = map[i, j];
                 }
             }
         }
@@ -142,25 +128,25 @@ namespace ConwaysGameLife
             {
                 for (int j = 0; j < m_height; j++)
                 {
-                    if (m_map[i, j] == 0)
+                    if (m_map[j + i * m_height] == 0)
                         continue;
 
                     r.X = xOffset + i * gridSize;
                     r.Y = yOffset + j * gridSize;
 
-                    g.FillEllipse((m_map[i, j] == 1) ? brushYoung : brushOld, r);
+                    g.FillEllipse((m_map[j + i * m_height] == 1) ? brushYoung : brushOld, r);
                 }
             }
         }
 
         public int GetValue(int i, int j)
         {
-            return m_map[i, j];
+            return m_map[j + i * m_height];
         }
 
         public void SetValue(int val, int i, int j)
         {
-            m_map[i, j] = val;
+            m_map[j + i * m_height] = val;
         }
 
         public void Clear()
@@ -178,7 +164,7 @@ namespace ConwaysGameLife
                 for (int j = 0; j < m_height; j++)
                 {
                     neighbors = GetNeighbors(i, j);
-                    m_tempMap[i, j] = irules.GetCellStatus(neighbors, m_map[i, j]);
+                    m_tempMap[j + i * m_height] = irules.GetCellStatus(neighbors, m_map[j + i * m_height]);
                 }
             }
 
@@ -198,7 +184,7 @@ namespace ConwaysGameLife
                     for (int j = 0; j < m_height; j++)
                     {
                         neighbors = GetNeighbors(i, j);
-                        m_tempMap[i, j] = irules.GetCellStatus(neighbors, m_map[i, j]);
+                        m_tempMap[j + i * m_height] = irules.GetCellStatus(neighbors, m_map[j + i * m_height]);
                     }
                 }
 
@@ -229,7 +215,7 @@ namespace ConwaysGameLife
             {
                 for (int j = 0; j < map1.m_height; j++)
                 {
-                    if (map1.m_map[i, j] != map2.m_map[i, j])
+                    if (map1.m_map[j + i * map1.m_height] != map2.m_map[j + i * map2.m_height])
                         return false;
                 }
             }
@@ -270,19 +256,9 @@ namespace ConwaysGameLife
             dt.Columns.Add("name", typeof(string));
 
             DataRow dr = dt.NewRow();
-            int[] map = new int[m_width * m_height];
-
-            for (int i = 0; i < m_width; i++)
-            {
-                for (int j = 0; j < m_height; j++)
-                {
-                    map[j + i * m_height] = m_map[i, j];
-                }
-            }
-
             int index = 0;
 
-            dr[index++] = map;
+            dr[index++] = m_map;
             dr[index++] = m_width;
             dr[index++] = m_height;
             dr[index++] = m_name;
@@ -302,7 +278,6 @@ namespace ConwaysGameLife
         public void Load(string path)
         {
             DataTable dt = new DataTable();
-            int[] map = null;
             
             try
             {
@@ -311,7 +286,7 @@ namespace ConwaysGameLife
                 DataRow dr = dt.Rows[0];
                 int index = 0;
 
-                map = (int[])dr[index++];
+                m_map = (int[])dr[index++];
                 m_width = (int)dr[index++];
                 m_height = (int)dr[index++];
                 m_name = (string)dr[index++];
@@ -319,17 +294,6 @@ namespace ConwaysGameLife
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
-
-            m_map = new int[m_width, m_height];
-            m_tempMap = new int[m_width, m_height];
-
-            for (int i = 0; i < m_width; i++)
-            {
-                for (int j = 0; j < m_height; j++)
-                {
-                    m_map[i, j] = map[j + i * m_height];
-                }
             }
         }
 
