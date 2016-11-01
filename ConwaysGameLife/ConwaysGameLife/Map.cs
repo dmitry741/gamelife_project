@@ -159,13 +159,10 @@ namespace ConwaysGameLife
             int neighbors;
             Array.Clear(m_tempMap, 0, m_tempMap.Length);
 
-            for (int i = 0; i < m_width; i++)
+            for (int i = 0; i < m_map.Length; i++)
             {
-                for (int j = 0; j < m_height; j++)
-                {
-                    neighbors = GetNeighbors(i, j);
-                    m_tempMap[j + i * m_height] = irules.GetCellStatus(neighbors, m_map[j + i * m_height]);
-                }
+                neighbors = GetNeighbors(i / m_height, i % m_height);
+                m_tempMap[i] = irules.GetCellStatus(neighbors, m_map[i]);
             }
 
             Array.Copy(m_tempMap, m_map, m_map.Length);
@@ -179,13 +176,10 @@ namespace ConwaysGameLife
             {
                 Array.Clear(m_tempMap, 0, m_tempMap.Length);
 
-                for (int i = 0; i < m_width; i++)
+                for (int i = 0; i < m_map.Length; i++)
                 {
-                    for (int j = 0; j < m_height; j++)
-                    {
-                        neighbors = GetNeighbors(i, j);
-                        m_tempMap[j + i * m_height] = irules.GetCellStatus(neighbors, m_map[j + i * m_height]);
-                    }
+                    neighbors = GetNeighbors(i / m_height, i % m_height);
+                    m_tempMap[i] = irules.GetCellStatus(neighbors, m_map[i]);
                 }
 
                 Array.Copy(m_tempMap, m_map, m_map.Length);
