@@ -100,6 +100,8 @@ namespace ConwaysGameLife
             cmbNext.SelectedIndex = 0;
 
             m_timer.Tick += timer_Tick;
+
+            //m_map.CopyMap(PresetMaps.glider, 2, 1);
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -223,7 +225,14 @@ namespace ConwaysGameLife
         {
             frmPresetMap dlg = new frmPresetMap();
 
-            dlg.ShowDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                int[,] map = dlg.map;
+
+                m_map.Clear();
+                m_map.CopyMap(map, (m_grid.gridSizeX - map.GetUpperBound(0) + 1) / 2, (m_grid.gridSizeY - map.GetUpperBound(1) + 1) / 2);
+                Render();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
