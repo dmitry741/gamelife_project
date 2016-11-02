@@ -38,6 +38,9 @@ namespace ConwaysGameLife
             listBox1.Items.Add(new Eight());
             listBox1.Items.Add(new Spinner());
             listBox1.Items.Add(new Baken());
+            listBox1.Items.Add(new Clock());
+            listBox1.Items.Add(new SpaceShuttle());
+            listBox1.Items.Add(new Stick());
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -220,6 +223,78 @@ namespace ConwaysGameLife
                                 { 1, 1, 0, 0 },
                                 { 0, 0, 1, 1 },
                                 { 0, 0, 1, 1 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Clock : AbstractPresetMap
+    {
+        public Clock()
+        {
+            description = "Clock";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 1, 0, 0 },
+                                { 0, 1, 0, 1 },
+                                { 1, 0, 1, 0 },
+                                { 0, 0, 1, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class SpaceShuttle : AbstractPresetMap
+    {
+        public SpaceShuttle()
+        {
+            description = "SpaceShuttle";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 0, 0, 1, 0 },
+                                { 0, 0, 0, 0, 1 },
+                                { 1, 0, 0, 0, 1 },
+                                { 0, 1, 1, 1, 1 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Stick : AbstractPresetMap
+    {
+        public Stick()
+        {
+            description = "Stick";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
 
                 return Transform(map);
             }
