@@ -15,5 +15,11 @@ namespace ConwaysGameLife
         {
             InitializeComponent();
         }
+
+        private void frmAbout_Load(object sender, EventArgs e)
+        {
+            txtGitHub.Text = Properties.Resources.GitHubLink;
+            txtEmail.Text = Properties.Resources.MyEmail;
+        }
     }
 }
