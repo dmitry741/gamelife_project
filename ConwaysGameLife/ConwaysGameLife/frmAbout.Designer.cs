@@ -30,9 +30,9 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblGitHub = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtGitHub = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,31 +57,31 @@
             this.textBox1.Size = new System.Drawing.Size(387, 79);
             this.textBox1.TabIndex = 1;
             // 
-            // label1
+            // lblGitHub
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "GitHub:";
+            this.lblGitHub.AutoSize = true;
+            this.lblGitHub.Location = new System.Drawing.Point(104, 107);
+            this.lblGitHub.Name = "lblGitHub";
+            this.lblGitHub.Size = new System.Drawing.Size(43, 13);
+            this.lblGitHub.TabIndex = 2;
+            this.lblGitHub.Text = "GitHub:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(104, 132);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.AutoSize = true;
-            this.txtEmail.Location = new System.Drawing.Point(104, 132);
+            this.txtEmail.Location = new System.Drawing.Point(156, 129);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(35, 13);
-            this.txtEmail.TabIndex = 4;
-            this.txtEmail.Text = "Email:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(156, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(338, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(338, 20);
+            this.txtEmail.TabIndex = 5;
             // 
             // txtGitHub
             // 
@@ -99,6 +99,7 @@
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Ok";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmAbout
             // 
@@ -107,9 +108,9 @@
             this.ClientSize = new System.Drawing.Size(503, 199);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtGitHub);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblGitHub);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -128,9 +129,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label txtEmail;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblGitHub;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtGitHub;
         private System.Windows.Forms.Button btnClose;
     }
