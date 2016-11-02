@@ -255,7 +255,7 @@ namespace ConwaysGameLife
     {
         public SpaceShuttle()
         {
-            description = "SpaceShuttle";
+            description = "Space Shuttle";
         }
 
         public override int[,] map
@@ -306,7 +306,7 @@ namespace ConwaysGameLife
     {
         public Oscillator()
         {
-            description = "Oscillator";
+            description = "Herz's Oscillator";
         }
 
         public override int[,] map
