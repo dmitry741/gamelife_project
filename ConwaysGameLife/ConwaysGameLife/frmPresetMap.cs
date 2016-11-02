@@ -34,6 +34,10 @@ namespace ConwaysGameLife
         private void frmPresetMap_Load(object sender, EventArgs e)
         {
             listBox1.Items.Add(new Glider());
+            listBox1.Items.Add(new Pentadecatlon());
+            listBox1.Items.Add(new Eight());
+            listBox1.Items.Add(new Spinner());
+            listBox1.Items.Add(new Baken());
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -123,6 +127,99 @@ namespace ConwaysGameLife
                 int[,] map = {  { 0, 1, 0 },
                                 { 0, 0, 1 },
                                 { 1, 1, 1 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Pentadecatlon : AbstractPresetMap
+    {
+        public Pentadecatlon()
+        {
+            description = "Pentadecatlon";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
+                                { 1, 1, 0, 1, 1, 1, 1, 0, 1, 1 },
+                                { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Eight : AbstractPresetMap
+    {
+        public Eight()
+        {
+            description = "Eight";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 1, 1, 1, 0, 0, 0 },
+                                { 1, 1, 1, 0, 0, 0 },
+                                { 1, 1, 1, 0, 0, 0 },
+                                { 0, 0, 0, 1, 1, 1 },
+                                { 0, 0, 0, 1, 1, 1 },
+                                { 0, 0, 0, 1, 1, 1 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Spinner : AbstractPresetMap
+    {
+        public Spinner()
+        {
+            description = "Spinner";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0 },
+                                { 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0 },
+                                { 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0 },
+                                { 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1 },
+                                { 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1 },
+                                { 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Baken : AbstractPresetMap
+    {
+        public Baken()
+        {
+            description = "Baken";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 1, 1, 0, 0 },
+                                { 1, 1, 0, 0 },
+                                { 0, 0, 1, 1 },
+                                { 0, 0, 1, 1 } };
 
                 return Transform(map);
             }

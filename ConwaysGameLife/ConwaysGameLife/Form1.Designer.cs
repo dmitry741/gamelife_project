@@ -49,8 +49,8 @@
             this.cbGridView = new System.Windows.Forms.CheckBox();
             this.btnSettings = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -235,7 +235,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbGridView);
-            this.groupBox3.Location = new System.Drawing.Point(0, 60);
+            this.groupBox3.Location = new System.Drawing.Point(727, 514);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(121, 49);
             this.groupBox3.TabIndex = 11;
@@ -269,22 +269,12 @@
             // 
             this.groupBox4.Controls.Add(this.lblCount);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.groupBox3);
-            this.groupBox4.Location = new System.Drawing.Point(724, 454);
+            this.groupBox4.Location = new System.Drawing.Point(727, 454);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(121, 54);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Statistics";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Cell count =";
             // 
             // lblCount
             // 
@@ -295,6 +285,15 @@
             this.lblCount.TabIndex = 1;
             this.lblCount.Text = "0";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Cell count =";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +301,7 @@
             this.ClientSize = new System.Drawing.Size(853, 730);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnSettings);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
