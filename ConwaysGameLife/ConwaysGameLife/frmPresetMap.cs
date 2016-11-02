@@ -41,6 +41,7 @@ namespace ConwaysGameLife
             listBox1.Items.Add(new Clock());
             listBox1.Items.Add(new SpaceShuttle());
             listBox1.Items.Add(new Stick());
+            listBox1.Items.Add(new Oscillator());
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -295,6 +296,34 @@ namespace ConwaysGameLife
                                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                 { 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                 { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Oscillator : AbstractPresetMap
+    {
+        public Oscillator()
+        {
+            description = "Oscillator";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1 },
+                                { 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1 },
+                                { 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0 },
+                                { 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1 },
+                                { 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 } };
 
                 return Transform(map);
             }
