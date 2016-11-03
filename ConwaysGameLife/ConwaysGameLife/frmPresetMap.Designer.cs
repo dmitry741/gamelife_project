@@ -45,9 +45,9 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(323, 218);
+            this.btnOk.Location = new System.Drawing.Point(347, 219);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(101, 33);
+            this.btnOk.Size = new System.Drawing.Size(76, 28);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "Load";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(216, 218);
+            this.button1.Location = new System.Drawing.Point(265, 219);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 33);
+            this.button1.Size = new System.Drawing.Size(76, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 263);
+            this.ClientSize = new System.Drawing.Size(436, 259);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.listBox1);

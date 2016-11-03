@@ -42,6 +42,7 @@ namespace ConwaysGameLife
             listBox1.Items.Add(new SpaceShuttle());
             listBox1.Items.Add(new Stick());
             listBox1.Items.Add(new Oscillator());
+            listBox1.Items.Add(new Pulsar());
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -324,6 +325,36 @@ namespace ConwaysGameLife
                                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                 { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
                                 { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Pulsar : AbstractPresetMap
+    {
+        public Pulsar()
+        {
+            description = "Pulsar СР 48-56-72";
+        }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
+                                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
+                                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
+                                { 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0 },
+                                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
+                                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
+                                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1 },
+                                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                                { 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0 } };
 
                 return Transform(map);
             }

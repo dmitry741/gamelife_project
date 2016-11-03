@@ -93,9 +93,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(419, 161);
+            this.btnClose.Location = new System.Drawing.Point(418, 159);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 29);
+            this.btnClose.Size = new System.Drawing.Size(76, 28);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Ok";
             this.btnClose.UseVisualStyleBackColor = true;
