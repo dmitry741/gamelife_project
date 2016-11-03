@@ -91,6 +91,7 @@ namespace ConwaysGameLife
             m_controlsForDisabling.Add(btnLoad);
             m_controlsForDisabling.Add(btnRandom);
             m_controlsForDisabling.Add(btnClear);
+            m_controlsForDisabling.Add(btnSaveImage);
 
             for (int i = 0; i < 6; i++)
             {

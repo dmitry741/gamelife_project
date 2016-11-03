@@ -36,7 +36,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSabeImage = new System.Windows.Forms.Button();
+            this.btnSaveImage = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRandom = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -129,7 +129,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnSabeImage);
+            this.groupBox1.Controls.Add(this.btnSaveImage);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnLoad);
@@ -141,15 +141,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Map";
             // 
-            // btnSabeImage
+            // btnSaveImage
             // 
-            this.btnSabeImage.Location = new System.Drawing.Point(6, 22);
-            this.btnSabeImage.Name = "btnSabeImage";
-            this.btnSabeImage.Size = new System.Drawing.Size(101, 28);
-            this.btnSabeImage.TabIndex = 9;
-            this.btnSabeImage.Text = "Save image...";
-            this.btnSabeImage.UseVisualStyleBackColor = true;
-            this.btnSabeImage.Click += new System.EventHandler(this.btnSabeImage_Click);
+            this.btnSaveImage.Location = new System.Drawing.Point(6, 22);
+            this.btnSaveImage.Name = "btnSaveImage";
+            this.btnSaveImage.Size = new System.Drawing.Size(101, 28);
+            this.btnSaveImage.TabIndex = 9;
+            this.btnSaveImage.Text = "Save image...";
+            this.btnSaveImage.UseVisualStyleBackColor = true;
+            this.btnSaveImage.Click += new System.EventHandler(this.btnSabeImage_Click);
             // 
             // btnClear
             // 
@@ -273,7 +273,7 @@
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(101, 28);
             this.btnSettings.TabIndex = 12;
-            this.btnSettings.Text = "Settings...";
+            this.btnSettings.Text = "Rules...";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
@@ -365,7 +365,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCount;
-        private System.Windows.Forms.Button btnSabeImage;
+        private System.Windows.Forms.Button btnSaveImage;
     }
 }
 
