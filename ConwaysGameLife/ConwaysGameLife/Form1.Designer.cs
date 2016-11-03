@@ -72,7 +72,7 @@
             // 
             this.btnStart.Location = new System.Drawing.Point(9, 19);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(101, 33);
+            this.btnStart.Size = new System.Drawing.Size(101, 28);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -98,9 +98,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(733, 685);
+            this.btnExit.Location = new System.Drawing.Point(733, 690);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(101, 33);
+            this.btnExit.Size = new System.Drawing.Size(101, 28);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             this.btnSave.Location = new System.Drawing.Point(6, 19);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 33);
+            this.btnSave.Size = new System.Drawing.Size(101, 28);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save map...";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -118,9 +118,9 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(6, 58);
+            this.btnLoad.Location = new System.Drawing.Point(6, 53);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(101, 33);
+            this.btnLoad.Size = new System.Drawing.Size(101, 28);
             this.btnLoad.TabIndex = 7;
             this.btnLoad.Text = "Load map...";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -134,16 +134,16 @@
             this.groupBox1.Controls.Add(this.btnRandom);
             this.groupBox1.Location = new System.Drawing.Point(724, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(121, 182);
+            this.groupBox1.Size = new System.Drawing.Size(121, 159);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Map";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(6, 136);
+            this.btnClear.Location = new System.Drawing.Point(6, 121);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(101, 33);
+            this.btnClear.Size = new System.Drawing.Size(101, 28);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -151,9 +151,9 @@
             // 
             // btnRandom
             // 
-            this.btnRandom.Location = new System.Drawing.Point(6, 97);
+            this.btnRandom.Location = new System.Drawing.Point(6, 87);
             this.btnRandom.Name = "btnRandom";
-            this.btnRandom.Size = new System.Drawing.Size(101, 33);
+            this.btnRandom.Size = new System.Drawing.Size(101, 28);
             this.btnRandom.TabIndex = 6;
             this.btnRandom.Text = "Preset maps...";
             this.btnRandom.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             this.groupBox2.Controls.Add(this.btnNext10);
             this.groupBox2.Controls.Add(this.btnNext);
             this.groupBox2.Controls.Add(this.btnStart);
-            this.groupBox2.Location = new System.Drawing.Point(724, 258);
+            this.groupBox2.Location = new System.Drawing.Point(724, 235);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(121, 190);
             this.groupBox2.TabIndex = 9;
@@ -206,7 +206,7 @@
             // 
             this.btnNext10.Location = new System.Drawing.Point(9, 147);
             this.btnNext10.Name = "btnNext10";
-            this.btnNext10.Size = new System.Drawing.Size(58, 33);
+            this.btnNext10.Size = new System.Drawing.Size(58, 28);
             this.btnNext10.TabIndex = 3;
             this.btnNext10.Text = "Next +=";
             this.btnNext10.UseVisualStyleBackColor = true;
@@ -216,7 +216,7 @@
             // 
             this.btnNext.Location = new System.Drawing.Point(9, 108);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 33);
+            this.btnNext.Size = new System.Drawing.Size(101, 28);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Next++";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -224,9 +224,9 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(733, 646);
+            this.btnAbout.Location = new System.Drawing.Point(733, 656);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(101, 33);
+            this.btnAbout.Size = new System.Drawing.Size(101, 28);
             this.btnAbout.TabIndex = 10;
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbGridView);
-            this.groupBox3.Location = new System.Drawing.Point(727, 514);
+            this.groupBox3.Location = new System.Drawing.Point(724, 491);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(121, 49);
             this.groupBox3.TabIndex = 11;
@@ -257,9 +257,9 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(733, 607);
+            this.btnSettings.Location = new System.Drawing.Point(733, 622);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(101, 33);
+            this.btnSettings.Size = new System.Drawing.Size(101, 28);
             this.btnSettings.TabIndex = 12;
             this.btnSettings.Text = "Settings...";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -269,7 +269,7 @@
             // 
             this.groupBox4.Controls.Add(this.lblCount);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(727, 454);
+            this.groupBox4.Location = new System.Drawing.Point(724, 431);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(121, 54);
             this.groupBox4.TabIndex = 13;

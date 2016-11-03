@@ -53,9 +53,9 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(480, 326);
+            this.btnOk.Location = new System.Drawing.Point(505, 326);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(101, 33);
+            this.btnOk.Size = new System.Drawing.Size(76, 28);
             this.btnOk.TabIndex = 0;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             // 
             this.btnDelete.Location = new System.Drawing.Point(477, 57);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 32);
+            this.btnDelete.Size = new System.Drawing.Size(76, 28);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Remove";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(477, 19);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 32);
+            this.btnAdd.Size = new System.Drawing.Size(76, 28);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -262,7 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 371);
+            this.ClientSize = new System.Drawing.Size(590, 366);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
