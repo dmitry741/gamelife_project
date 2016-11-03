@@ -267,6 +267,19 @@ namespace ConwaysGameLife
 
             m_currentRulesIndex = dlg.currentRulesIndex;
         }
+
+        private void btnSabeImage_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                Filter = "PNG File (*.png)|*.png"
+            };
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                m_bitmap.Save(dlg.FileName, System.Drawing.Imaging.ImageFormat.Png);
+            }
+        }
     }
 
     class PresetInterval

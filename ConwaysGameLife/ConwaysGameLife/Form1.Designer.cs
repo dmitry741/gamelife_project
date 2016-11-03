@@ -36,6 +36,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSabeImage = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRandom = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -108,7 +109,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(6, 19);
+            this.btnSave.Location = new System.Drawing.Point(6, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 28);
             this.btnSave.TabIndex = 6;
@@ -118,7 +119,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(6, 53);
+            this.btnLoad.Location = new System.Drawing.Point(6, 90);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(101, 28);
             this.btnLoad.TabIndex = 7;
@@ -128,20 +129,31 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSabeImage);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnLoad);
             this.groupBox1.Controls.Add(this.btnRandom);
-            this.groupBox1.Location = new System.Drawing.Point(724, 70);
+            this.groupBox1.Location = new System.Drawing.Point(724, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(121, 159);
+            this.groupBox1.Size = new System.Drawing.Size(121, 196);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Map";
             // 
+            // btnSabeImage
+            // 
+            this.btnSabeImage.Location = new System.Drawing.Point(6, 22);
+            this.btnSabeImage.Name = "btnSabeImage";
+            this.btnSabeImage.Size = new System.Drawing.Size(101, 28);
+            this.btnSabeImage.TabIndex = 9;
+            this.btnSabeImage.Text = "Save image...";
+            this.btnSabeImage.UseVisualStyleBackColor = true;
+            this.btnSabeImage.Click += new System.EventHandler(this.btnSabeImage_Click);
+            // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(6, 121);
+            this.btnClear.Location = new System.Drawing.Point(6, 158);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(101, 28);
             this.btnClear.TabIndex = 8;
@@ -151,7 +163,7 @@
             // 
             // btnRandom
             // 
-            this.btnRandom.Location = new System.Drawing.Point(6, 87);
+            this.btnRandom.Location = new System.Drawing.Point(6, 124);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(101, 28);
             this.btnRandom.TabIndex = 6;
@@ -167,7 +179,7 @@
             this.groupBox2.Controls.Add(this.btnNext10);
             this.groupBox2.Controls.Add(this.btnNext);
             this.groupBox2.Controls.Add(this.btnStart);
-            this.groupBox2.Location = new System.Drawing.Point(724, 235);
+            this.groupBox2.Location = new System.Drawing.Point(724, 266);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(121, 190);
             this.groupBox2.TabIndex = 9;
@@ -235,7 +247,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbGridView);
-            this.groupBox3.Location = new System.Drawing.Point(724, 491);
+            this.groupBox3.Location = new System.Drawing.Point(724, 522);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(121, 49);
             this.groupBox3.TabIndex = 11;
@@ -269,7 +281,7 @@
             // 
             this.groupBox4.Controls.Add(this.lblCount);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(724, 431);
+            this.groupBox4.Location = new System.Drawing.Point(724, 462);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(121, 54);
             this.groupBox4.TabIndex = 13;
@@ -353,6 +365,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Button btnSabeImage;
     }
 }
 
