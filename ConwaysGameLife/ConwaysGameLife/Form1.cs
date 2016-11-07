@@ -236,8 +236,10 @@ namespace ConwaysGameLife
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "Life map files (*.lmf)|*.lmf|All files (*.*)|*.*";
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                Filter = "Life map files (*.lmf)|*.lmf|All files (*.*)|*.*"
+            };
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -247,8 +249,10 @@ namespace ConwaysGameLife
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Life map files (*.lmf)|*.lmf|All files (*.*)|*.*";
+            OpenFileDialog dlg = new OpenFileDialog()
+            {
+                Filter = "Life map files (*.lmf)|*.lmf|All files (*.*)|*.*"
+            };
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {

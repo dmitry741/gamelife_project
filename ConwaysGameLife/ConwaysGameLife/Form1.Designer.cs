@@ -190,7 +190,7 @@
             // 
             this.cmbNext.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNext.FormattingEnabled = true;
-            this.cmbNext.Location = new System.Drawing.Point(73, 154);
+            this.cmbNext.Location = new System.Drawing.Point(73, 152);
             this.cmbNext.Name = "cmbNext";
             this.cmbNext.Size = new System.Drawing.Size(37, 21);
             this.cmbNext.TabIndex = 6;

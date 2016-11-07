@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ConwaysGameLife
@@ -72,6 +66,11 @@ namespace ConwaysGameLife
     {
         string m_description = "Abstract Preset Map";
 
+        public AbstractPresetMap(string desc)
+        {
+            m_description = desc;
+        }
+
         protected int[,] Transform(int[,] m)
         {
             int xBound = m.GetUpperBound(0) + 1;
@@ -124,10 +123,7 @@ namespace ConwaysGameLife
 
     class Glider : AbstractPresetMap
     {
-        public Glider()
-        {
-            description = "Glider";
-        }
+        public Glider() : base("Glider") { }
 
         public override int[,] map
         {
@@ -144,10 +140,7 @@ namespace ConwaysGameLife
 
     class Pentadecatlon : AbstractPresetMap
     {
-        public Pentadecatlon()
-        {
-            description = "Pentadecatlon";
-        }
+        public Pentadecatlon() : base("Pentadecatlon") { }
 
         public override int[,] map
         {
@@ -164,10 +157,7 @@ namespace ConwaysGameLife
 
     class Eight : AbstractPresetMap
     {
-        public Eight()
-        {
-            description = "Eight";
-        }
+        public Eight() : base("Eight") { }
 
         public override int[,] map
         {
@@ -187,10 +177,7 @@ namespace ConwaysGameLife
 
     class Spinner : AbstractPresetMap
     {
-        public Spinner()
-        {
-            description = "Spinner";
-        }
+        public Spinner() : base("Spinner") { }
 
         public override int[,] map
         {
@@ -216,10 +203,7 @@ namespace ConwaysGameLife
 
     class Baken : AbstractPresetMap
     {
-        public Baken()
-        {
-            description = "Baken";
-        }
+        public Baken() : base("Baken") { }
 
         public override int[,] map
         {
@@ -237,10 +221,7 @@ namespace ConwaysGameLife
 
     class Clock : AbstractPresetMap
     {
-        public Clock()
-        {
-            description = "Clock";
-        }
+        public Clock() : base("Clock") { }
 
         public override int[,] map
         {
@@ -258,10 +239,7 @@ namespace ConwaysGameLife
 
     class SpaceShuttle : AbstractPresetMap
     {
-        public SpaceShuttle()
-        {
-            description = "Space Shuttle";
-        }
+        public SpaceShuttle() : base("Space Shuttle") { }
 
         public override int[,] map
         {
@@ -279,10 +257,7 @@ namespace ConwaysGameLife
 
     class Stick : AbstractPresetMap
     {
-        public Stick()
-        {
-            description = "Stick";
-        }
+        public Stick() : base("Stick") { }
 
         public override int[,] map
         {
@@ -309,10 +284,7 @@ namespace ConwaysGameLife
 
     class Oscillator : AbstractPresetMap
     {
-        public Oscillator()
-        {
-            description = "Herz's Oscillator";
-        }
+        public Oscillator() : base("Herz's Oscillator") { }
 
         public override int[,] map
         {
@@ -337,10 +309,7 @@ namespace ConwaysGameLife
 
     class Pulsar : AbstractPresetMap
     {
-        public Pulsar()
-        {
-            description = "Pulsar СР 48-56-72";
-        }
+        public Pulsar() : base("Pulsar СР 48-56-72") { }
 
         public override int[,] map
         {
@@ -367,10 +336,7 @@ namespace ConwaysGameLife
 
     class ToggleSwitch : AbstractPresetMap
     {
-        public ToggleSwitch()
-        {
-            description = "Toggle switch";
-        }
+        public ToggleSwitch() : base("Toggle switch") { }
 
         public override int[,] map
         {
@@ -389,10 +355,7 @@ namespace ConwaysGameLife
 
     class PingPong : AbstractPresetMap
     {
-        public PingPong()
-        {
-            description = "Ping-pong";
-        }
+        public PingPong() : base("Ping-pong") { }
 
         public override int[,] map
         {
@@ -413,10 +376,7 @@ namespace ConwaysGameLife
 
     class GliderRifle : AbstractPresetMap
     {
-        public GliderRifle()
-        {
-            description = "Glider Rifle";
-        }
+        public GliderRifle() : base("Glider Rifle") { }
 
         public override int[,] map
         {
@@ -448,10 +408,7 @@ namespace ConwaysGameLife
 
     class RifleCreation : AbstractPresetMap
     {
-        public RifleCreation()
-        {
-            description = "Creation of glider rifle";
-        }
+        public RifleCreation() : base("Creation of glider rifle") { }
 
         public override int[,] map
         {
