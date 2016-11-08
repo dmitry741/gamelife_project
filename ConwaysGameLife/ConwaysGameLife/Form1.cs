@@ -108,6 +108,7 @@ namespace ConwaysGameLife
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
             m_map.Next(irules);
             lblCount.Text = m_map.cellCount.ToString();
+            lblStep.Text = m_map.step.ToString();
             Render();
         }
 
@@ -169,6 +170,7 @@ namespace ConwaysGameLife
             {
                 m_map.Clear();
                 lblCount.Text = "0";
+                lblStep.Text = "0";
                 Render();
             }
         }
@@ -178,6 +180,7 @@ namespace ConwaysGameLife
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
             m_map.Next(irules);
             lblCount.Text = m_map.cellCount.ToString();
+            lblStep.Text = m_map.step.ToString();
             Render();
         }
 
@@ -186,6 +189,8 @@ namespace ConwaysGameLife
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
             int steps = (int)cmbNext.SelectedItem;
             m_map.Next(irules, steps);
+            lblCount.Text = m_map.cellCount.ToString();
+            lblStep.Text = m_map.step.ToString();
             Render();
         }
 
@@ -230,6 +235,8 @@ namespace ConwaysGameLife
 
                 m_map.Clear();
                 m_map.CopyMap(map, (m_grid.gridSizeX - map.GetUpperBound(0)) / 2, (m_grid.gridSizeY - map.GetUpperBound(1)) / 2);
+                lblCount.Text = m_map.cellCount.ToString();
+                lblStep.Text = m_map.step.ToString();
                 Render();
             }
         }
@@ -258,6 +265,7 @@ namespace ConwaysGameLife
             {
                 m_map.Load(dlg.FileName);
                 lblCount.Text = m_map.cellCount.ToString();
+                lblStep.Text = m_map.step.ToString();
                 Render();
             }
         }

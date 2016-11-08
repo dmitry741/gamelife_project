@@ -52,6 +52,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblStep = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -247,7 +249,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbGridView);
-            this.groupBox3.Location = new System.Drawing.Point(724, 522);
+            this.groupBox3.Location = new System.Drawing.Point(724, 547);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(121, 49);
             this.groupBox3.TabIndex = 11;
@@ -279,11 +281,13 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblStep);
+            this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.lblCount);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Location = new System.Drawing.Point(724, 462);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(121, 54);
+            this.groupBox4.Size = new System.Drawing.Size(121, 79);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Statistics";
@@ -305,6 +309,24 @@
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Cell count =";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Step = ";
+            // 
+            // lblStep
+            // 
+            this.lblStep.AutoSize = true;
+            this.lblStep.Location = new System.Drawing.Point(50, 49);
+            this.lblStep.Name = "lblStep";
+            this.lblStep.Size = new System.Drawing.Size(13, 13);
+            this.lblStep.TabIndex = 3;
+            this.lblStep.Text = "0";
             // 
             // frmMain
             // 
@@ -366,6 +388,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Button btnSaveImage;
+        private System.Windows.Forms.Label lblStep;
+        private System.Windows.Forms.Label label4;
     }
 }
 

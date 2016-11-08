@@ -12,12 +12,14 @@ namespace ConwaysGameLife
         int[] m_tempMap;
         int m_width, m_height;
         string m_name;
+        int m_step;
 
         public Map()
         {
             m_map = m_tempMap = null;
             m_width = m_height = 0;
             m_name = "Empty";
+            m_step = 0;
         }
 
         public Map(int _width, int _height, string _name)
@@ -80,11 +82,17 @@ namespace ConwaysGameLife
             get { return m_map.Count(x => x > 0); }
         }
 
+        public int step
+        {
+            get { return m_step; }
+        }
+
         public void CreateEmptyMap(int _width, int _height, string _name)
         {
             m_width = _width;
             m_height = _height;
             m_name = _name;
+            m_step = 0;
 
             m_map = new int[m_width * m_height];
             m_tempMap = new int[m_width * m_height];
@@ -150,6 +158,7 @@ namespace ConwaysGameLife
         public void Clear()
         {
             Array.Clear(m_map, 0, m_map.Length);
+            m_step = 0;
         }
 
         public void Next(ILifeRule irules)
@@ -164,23 +173,14 @@ namespace ConwaysGameLife
             }
 
             Array.Copy(m_tempMap, m_map, m_map.Length);
+            m_step++;
         }
 
         public void Next(ILifeRule irules, int count)
         {
-            int neighbors;            
-
             for (int index = 0; index < count; index++)
             {
-                Array.Clear(m_tempMap, 0, m_tempMap.Length);
-
-                for (int i = 0; i < m_map.Length; i++)
-                {
-                    neighbors = GetNeighbors(i / m_height, i % m_height);
-                    m_tempMap[i] = irules.GetCellStatus(neighbors, m_map[i]);
-                }
-
-                Array.Copy(m_tempMap, m_map, m_map.Length);
+                Next(irules);
             }
         }
 
@@ -282,6 +282,8 @@ namespace ConwaysGameLife
                 m_width = (int)dr[index++];
                 m_height = (int)dr[index++];
                 m_name = (string)dr[index++];
+
+                m_step = 0;
             }
             catch (Exception ex)
             {

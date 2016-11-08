@@ -61,7 +61,7 @@ namespace ConwaysGameLife.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conway&apos;s Game of Life is open source software that realize the work of cell automat.  Developed by Dmitry Pavlov 2016..
+        ///   Looks up a localized string similar to Conway&apos;s Game of Life is open source software that realizes the work of cell automat.  Developed by Dmitry Pavlov 2016..
         /// </summary>
         internal static string About_description {
             get {
