@@ -42,10 +42,10 @@ namespace ConwaysGameLife
                 cmbCellGoOnNumber2.Items.Add(i);
             }
 
-            cmbNewCellSign1.Items.AddRange(Utility.sings);
-            cmbNewCellSign2.Items.AddRange(Utility.sings);
-            cmbCellGoOnSign1.Items.AddRange(Utility.sings);
-            cmbCellGoOnSign2.Items.AddRange(Utility.sings);
+            cmbNewCellSign1.Items.AddRange(Utility.signs);
+            cmbNewCellSign2.Items.AddRange(Utility.signs);
+            cmbCellGoOnSign1.Items.AddRange(Utility.signs);
+            cmbCellGoOnSign2.Items.AddRange(Utility.signs);
 
             listBox1.SelectedIndex = m_currentRulesIndex;
         }
