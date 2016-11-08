@@ -272,10 +272,7 @@ namespace ConwaysGameLife
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            frmSettings dlg = new frmSettings();
-
-            dlg.SetListLifeRules(ref m_lifeRules);
-            dlg.currentRulesIndex = m_currentRulesIndex;
+            frmSettings dlg = new frmSettings(ref m_lifeRules, m_currentRulesIndex);
             dlg.ShowDialog();
 
             m_currentRulesIndex = dlg.currentRulesIndex;

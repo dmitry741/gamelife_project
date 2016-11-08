@@ -6,24 +6,18 @@ namespace ConwaysGameLife
 {
     public partial class frmSettings : Form
     {
-        public frmSettings()
+        public frmSettings(ref List<ILifeRule> lifeRules, int currentRulesIndex)
         {
             InitializeComponent();
+
+            m_lifeRules = lifeRules;
+            m_currentRulesIndex = currentRulesIndex;
         }
 
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
         int m_currentRulesIndex = 0;
 
-        public void SetListLifeRules(ref List<ILifeRule> lifeRules)
-        {
-            m_lifeRules = lifeRules;
-        }
-
-        public int currentRulesIndex
-        {
-            get { return m_currentRulesIndex; }
-            set { m_currentRulesIndex = value; }
-        }
+        public int currentRulesIndex => m_currentRulesIndex;
 
         private void btnOk_Click(object sender, EventArgs e)
         {
