@@ -290,6 +290,18 @@ namespace ConwaysGameLife
                 m_bitmap.Save(dlg.FileName, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                btnSave_Click(sender, null);
+            }
+            else if (e.Control && e.KeyCode == Keys.O)
+            {
+                btnLoad_Click(sender, null);
+            }
+        }
     }
 
     class PresetInterval

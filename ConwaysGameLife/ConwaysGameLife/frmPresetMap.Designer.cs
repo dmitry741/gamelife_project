@@ -38,14 +38,14 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(411, 199);
+            this.listBox1.Size = new System.Drawing.Size(411, 212);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(347, 219);
+            this.btnOk.Location = new System.Drawing.Point(347, 237);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(76, 28);
             this.btnOk.TabIndex = 2;
@@ -56,7 +56,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(265, 219);
+            this.button1.Location = new System.Drawing.Point(265, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 28);
             this.button1.TabIndex = 3;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 259);
+            this.ClientSize = new System.Drawing.Size(436, 277);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.listBox1);

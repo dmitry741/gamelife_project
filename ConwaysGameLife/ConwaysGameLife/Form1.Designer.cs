@@ -50,10 +50,10 @@
             this.cbGridView = new System.Windows.Forms.CheckBox();
             this.btnSettings = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblStep = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblStep = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -292,6 +292,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Statistics";
             // 
+            // lblStep
+            // 
+            this.lblStep.AutoSize = true;
+            this.lblStep.Location = new System.Drawing.Point(50, 49);
+            this.lblStep.Name = "lblStep";
+            this.lblStep.Size = new System.Drawing.Size(13, 13);
+            this.lblStep.TabIndex = 3;
+            this.lblStep.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Step = ";
+            // 
             // lblCount
             // 
             this.lblCount.AutoSize = true;
@@ -310,24 +328,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Cell count =";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Step = ";
-            // 
-            // lblStep
-            // 
-            this.lblStep.AutoSize = true;
-            this.lblStep.Location = new System.Drawing.Point(50, 49);
-            this.lblStep.Name = "lblStep";
-            this.lblStep.Size = new System.Drawing.Size(13, 13);
-            this.lblStep.TabIndex = 3;
-            this.lblStep.Text = "0";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,11 +344,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = " Conway\'s Game of Life";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

@@ -41,6 +41,7 @@ namespace ConwaysGameLife
             listBox1.Items.Add(new PingPong());
             listBox1.Items.Add(new GliderRifle());
             listBox1.Items.Add(new RifleCreation());
+            listBox1.Items.Add(new Pentamimo());
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -400,6 +401,23 @@ namespace ConwaysGameLife
                                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class Pentamimo : AbstractPresetMap
+    {
+        public Pentamimo() : base("Pentamino: long life") { }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 0, 1,  1},
+                                { 1, 1, 0 },
+                                { 0, 1, 0 } };
 
                 return Transform(map);
             }
