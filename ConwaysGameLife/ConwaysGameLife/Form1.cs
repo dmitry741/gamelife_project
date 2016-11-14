@@ -21,6 +21,7 @@ namespace ConwaysGameLife
         Bitmap m_bitmap = null;
         DrawingGrid m_grid = new DrawingGrid(true);
         Map m_map = new Map();
+        Map m_prevMap = new Map();
         List<ILifeRule> m_lifeRules = new List<ILifeRule>();
         int m_currentRulesIndex = 0;
         Timer m_timer = new Timer();
@@ -82,6 +83,7 @@ namespace ConwaysGameLife
             cmbAnimateMode.SelectedIndex = 1;
 
             m_map.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "New");
+            m_prevMap.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "prev");
 
             m_lifeRules.Add(new ClassicConwaysRules());
             m_lifeRules.Add(new MyLifeMyRules());
@@ -106,10 +108,21 @@ namespace ConwaysGameLife
         private void timer_Tick(object sender, EventArgs e)
         {
             ILifeRule irules = m_lifeRules[m_currentRulesIndex];
+
+            m_prevMap.CopyDataFrom(m_map);
             m_map.Next(irules);
+
             lblCount.Text = m_map.cellCount.ToString();
             lblStep.Text = m_map.step.ToString();
             Render();
+
+            // stop if the current map is equal to the previous one
+            if (m_map == m_prevMap)
+            {
+                m_timer.Stop();
+                btnStart.Text = "Start";
+                EnableControls(true);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -130,6 +143,7 @@ namespace ConwaysGameLife
                 m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
                 m_map.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "New");
+                m_prevMap.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "prev");
             }
         }
 
@@ -163,15 +177,18 @@ namespace ConwaysGameLife
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure that you want to clear the map?";
-            string caption = " Conway's Game of Life";
-
-            if (MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (m_map.cellCount > 0)
             {
-                m_map.Clear();
-                lblCount.Text = "0";
-                lblStep.Text = "0";
-                Render();
+                string message = "Are you sure that you want to clear the map?";
+                string caption = " Conway's Game of Life";
+
+                if (MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    m_map.Clear();
+                    lblCount.Text = "0";
+                    lblStep.Text = "0";
+                    Render();
+                }
             }
         }
 

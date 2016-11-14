@@ -77,6 +77,11 @@ namespace ConwaysGameLife
             return m;
         }
 
+        public void CopyDataFrom(Map map)
+        {
+            Array.Copy(map.m_map, m_map, map.m_map.Length);
+        }
+
         public int cellCount
         {
             get { return m_map.Count(x => x > 0); }
