@@ -87,18 +87,16 @@ namespace ConwaysGameLife
 
             for (float x = xOffset; x < rectangle.Width; x += size)
             {
+                points[0].X = x - c_renderSize;
+                points[1].X = x + c_renderSize;
+                points[2].X = x;
+                points[3].X = x;
+
                 for (float y = yOffset; y < rectangle.Height; y += size)
                 {
-                    points[0].X = x - c_renderSize;
-                    points[0].Y = y;
-
-                    points[1].X = x + c_renderSize;
-                    points[1].Y = y;
-
-                    points[2].X = x;
-                    points[2].Y = y - c_renderSize;
-
-                    points[3].X = x;
+                    points[0].Y = y;                    
+                    points[1].Y = y;                    
+                    points[2].Y = y - c_renderSize;                    
                     points[3].Y = y + c_renderSize;
 
                     g.DrawLines(pen, points);
