@@ -137,12 +137,13 @@ namespace ConwaysGameLife
 
             for (int i = 0; i < m_width; i++)
             {
+                r.X = xOffset + i * gridSize;
+
                 for (int j = 0; j < m_height; j++)
                 {
                     if (m_map[j + i * m_height] == 0)
                         continue;
 
-                    r.X = xOffset + i * gridSize;
                     r.Y = yOffset + j * gridSize;
 
                     g.FillEllipse((m_map[j + i * m_height] == 1) ? brushYoung : brushOld, r);
