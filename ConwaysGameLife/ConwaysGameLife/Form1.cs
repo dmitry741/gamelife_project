@@ -47,20 +47,20 @@ namespace ConwaysGameLife
 
         void Render()
         {
-            // проверка картинки на валидность.
+            // check for valid bitmap
             if (m_bitmap == null)
                 return;
 
-            // создаем новый графический контекст.
+            // create new graphics object
             Graphics g = Graphics.FromImage(m_bitmap);
 
-            // очищаем контекст.
+            // clear content
             g.Clear(Color.White);
 
-            // отрисовываем карту.
+            // render the current map
             RenderMap(g);
 
-            // отрисовка.
+            // "BitBlt"
             pictureBox1.Image = m_bitmap;
         }
 
@@ -73,13 +73,13 @@ namespace ConwaysGameLife
             m_bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             m_grid.rectangle = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
 
-            cmbSceneMode.Items.Add("Просмотр");
-            cmbSceneMode.Items.Add("Добавить/Удалить");
+            cmbSceneMode.Items.Add("View");
+            cmbSceneMode.Items.Add("Add/remove cell");
             cmbSceneMode.SelectedIndex = 1;
 
-            cmbAnimateMode.Items.Add(new PresetInterval("Быстро", 250));
-            cmbAnimateMode.Items.Add(new PresetInterval("Нормально", 500));
-            cmbAnimateMode.Items.Add(new PresetInterval("Медленно", 1000));
+            cmbAnimateMode.Items.Add(new PresetInterval("Fast", 250));
+            cmbAnimateMode.Items.Add(new PresetInterval("Normal", 500));
+            cmbAnimateMode.Items.Add(new PresetInterval("Slow", 1000));
             cmbAnimateMode.SelectedIndex = 1;
 
             m_map.CreateEmptyMap(m_grid.gridSizeX, m_grid.gridSizeY, "New");
@@ -116,7 +116,7 @@ namespace ConwaysGameLife
             lblStep.Text = m_map.step.ToString();
             Render();
 
-            // останавливаем таймер если карта перестала менять содержимое.
+            // stop if the current map is equal to the previous one
             if (m_map == m_prevMap)
             {
                 m_timer.Stop();
@@ -128,6 +128,12 @@ namespace ConwaysGameLife
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout dlg = new frmAbout();
+            dlg.ShowDialog();
         }
 
         private void pictureBox1_SizeChanged(object sender, EventArgs e)
@@ -154,7 +160,7 @@ namespace ConwaysGameLife
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (cmbSceneMode.SelectedIndex == 0)
+            if (cmbSceneMode.SelectedIndex == 0) // view
                 return;
 
             Point point = m_grid.GetMapIndex(e.X, e.Y);
@@ -210,12 +216,12 @@ namespace ConwaysGameLife
             if (m_timer.Enabled)
             {
                 m_timer.Stop();
-                btnStart.Text = "Старт";
+                btnStart.Text = "Start";
                 EnableControls(true);
             }
             else
             {
-                btnStart.Text = "Стоп";
+                btnStart.Text = "Stop";
                 EnableControls(false);
 
                 PresetInterval pi = cmbAnimateMode.SelectedItem as PresetInterval;
@@ -298,7 +304,6 @@ namespace ConwaysGameLife
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                // сохраняем карту.
                 m_bitmap.Save(dlg.FileName, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
