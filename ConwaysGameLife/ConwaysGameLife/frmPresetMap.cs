@@ -65,7 +65,7 @@ namespace ConwaysGameLife
 
     abstract class AbstractPresetMap
     {
-        string m_description = "Abstract Preset Map";
+        string m_description = "Новая готовая карта";
 
         public AbstractPresetMap(string desc)
         {
@@ -124,7 +124,7 @@ namespace ConwaysGameLife
 
     class Glider : AbstractPresetMap
     {
-        public Glider() : base("Glider") { }
+        public Glider() : base("Глайдер") { }
 
         public override int[,] map
         {
@@ -141,7 +141,7 @@ namespace ConwaysGameLife
 
     class Pentadecatlon : AbstractPresetMap
     {
-        public Pentadecatlon() : base("Pentadecatlon") { }
+        public Pentadecatlon() : base("Пентадекатлон") { }
 
         public override int[,] map
         {
@@ -158,7 +158,7 @@ namespace ConwaysGameLife
 
     class Eight : AbstractPresetMap
     {
-        public Eight() : base("Eight") { }
+        public Eight() : base("Восьмерка") { }
 
         public override int[,] map
         {
@@ -178,7 +178,7 @@ namespace ConwaysGameLife
 
     class Spinner : AbstractPresetMap
     {
-        public Spinner() : base("Spinner") { }
+        public Spinner() : base("Спиннер") { }
 
         public override int[,] map
         {
@@ -204,7 +204,7 @@ namespace ConwaysGameLife
 
     class Baken : AbstractPresetMap
     {
-        public Baken() : base("Baken") { }
+        public Baken() : base("Бакен") { }
 
         public override int[,] map
         {
@@ -222,7 +222,7 @@ namespace ConwaysGameLife
 
     class Clock : AbstractPresetMap
     {
-        public Clock() : base("Clock") { }
+        public Clock() : base("Часы") { }
 
         public override int[,] map
         {
@@ -240,7 +240,7 @@ namespace ConwaysGameLife
 
     class SpaceShuttle : AbstractPresetMap
     {
-        public SpaceShuttle() : base("Space Shuttle") { }
+        public SpaceShuttle() : base("Челнок") { }
 
         public override int[,] map
         {
@@ -258,7 +258,7 @@ namespace ConwaysGameLife
 
     class Stick : AbstractPresetMap
     {
-        public Stick() : base("Stick") { }
+        public Stick() : base("Палочка") { }
 
         public override int[,] map
         {
@@ -285,7 +285,7 @@ namespace ConwaysGameLife
 
     class Oscillator : AbstractPresetMap
     {
-        public Oscillator() : base("Herz's Oscillator") { }
+        public Oscillator() : base("Осциллограф") { }
 
         public override int[,] map
         {
@@ -310,7 +310,7 @@ namespace ConwaysGameLife
 
     class Pulsar : AbstractPresetMap
     {
-        public Pulsar() : base("Pulsar СР 48-56-72") { }
+        public Pulsar() : base("Пульсар СР 48-56-72") { }
 
         public override int[,] map
         {
@@ -337,7 +337,7 @@ namespace ConwaysGameLife
 
     class ToggleSwitch : AbstractPresetMap
     {
-        public ToggleSwitch() : base("Toggle switch") { }
+        public ToggleSwitch() : base("Тумблер") { }
 
         public override int[,] map
         {
@@ -356,7 +356,7 @@ namespace ConwaysGameLife
 
     class PingPong : AbstractPresetMap
     {
-        public PingPong() : base("Ping-pong") { }
+        public PingPong() : base("Пинг-понг") { }
 
         public override int[,] map
         {
@@ -377,7 +377,7 @@ namespace ConwaysGameLife
 
     class GliderRifle : AbstractPresetMap
     {
-        public GliderRifle() : base("Glider Rifle") { }
+        public GliderRifle() : base("Глайдерное ружье") { }
 
         public override int[,] map
         {
@@ -409,7 +409,7 @@ namespace ConwaysGameLife
 
     class Pentamimo : AbstractPresetMap
     {
-        public Pentamimo() : base("Pentamino: long life") { }
+        public Pentamimo() : base("Пентамимо: долгая жизнь") { }
 
         public override int[,] map
         {
@@ -426,7 +426,7 @@ namespace ConwaysGameLife
 
     class RifleCreation : AbstractPresetMap
     {
-        public RifleCreation() : base("Creation of glider rifle") { }
+        public RifleCreation() : base("Создание глайдерного ружья") { }
 
         public override int[,] map
         {
