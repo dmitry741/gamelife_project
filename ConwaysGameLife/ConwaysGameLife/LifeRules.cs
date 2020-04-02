@@ -10,9 +10,9 @@
     {
         public int GetCellStatus(int neighbors, int currentStatus)
         {
-            // 0 -no cell
-            // 1 - new cell
-            // 2 - old cell
+            // 0 - нет клеток
+            // 1 - новая клетка
+            // 2 - старая клетка
 
             int status;
 
@@ -28,7 +28,7 @@
             return status;
         }
 
-        public string description => "Classic Conway's rules: B3/S23";
+        public string description => "Классические правила Конвея: B3/S23";
 
         public override string ToString()
         {
@@ -58,7 +58,7 @@
             return status;
         }
 
-        public string description => "Alternative rules: B3/S35";
+        public string description => "Альтернативные правила: B3/S35";
 
         public override string ToString()
         {
@@ -68,7 +68,7 @@
 
     class UserLifeRules : ILifeRule
     {
-        string m_description = "New rules";
+        string _description = "Новые правила";
 
         public UserLifeRules()
         {
@@ -87,7 +87,7 @@
 
         public UserLifeRules(string d)
         {
-            m_description = d;
+            _description = d;
 
             newCellNeighbors1 = 3;
             newCellSign1 = 0;
@@ -161,8 +161,8 @@
 
         public string description
         {
-            get { return m_description; }
-            set { m_description = value; }
+            get { return _description; }
+            set { _description = value; }
         }
 
         public override string ToString()
