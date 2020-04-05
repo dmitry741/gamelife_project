@@ -5,17 +5,17 @@ namespace ConwaysGameLife
 {
     public class DrawingGrid
     {
-        bool m_visible = false;
-        float m_size = c_defaultSize;
-        float m_xOffset = 0;
-        float m_yOffset = 0;
+        bool _visible = false;
+        float _size = c_defaultSize;
+        float _xOffset = 0;
+        float _yOffset = 0;
 
         public DrawingGrid(bool visible)
         {
-            m_visible = visible;
+            _visible = visible;
         }
 
-        Rectangle m_rectangle = Rectangle.Empty;
+        Rectangle _rectangle = Rectangle.Empty;
 
         const int c_renderSize = 2;
         const int c_defaultSize = 14;
@@ -24,37 +24,34 @@ namespace ConwaysGameLife
 
         public float xOffset
         {
-            get { return m_xOffset; }
-            set { m_xOffset = value; }
+            get { return _xOffset; }
+            set { _xOffset = value; }
         }
 
         public float yOffset
         {
-            get { return m_yOffset; }
-            set { m_yOffset = value; }
+            get { return _yOffset; }
+            set { _yOffset = value; }
         }
 
         public bool visible
         {
-            get { return m_visible; }
-            set { m_visible = value; }
+            get { return _visible; }
+            set { _visible = value; }
         }
 
         public Rectangle rectangle
         {
-            get { return m_rectangle; }
-            set { m_rectangle = value; }
+            get { return _rectangle; }
+            set { _rectangle = value; }
         }
 
-        public float size
-        {
-            get { return m_size; }
-        }
+        public float size => _size;
 
         public Point GetMapIndex(int X, int Y)
         {
-            double _x = Math.Truncate((X - m_xOffset) / size);
-            double _y = Math.Truncate((Y - m_yOffset) / size);
+            double _x = Math.Truncate((X - _xOffset) / size);
+            double _y = Math.Truncate((Y - _yOffset) / size);
 
             return new Point(Convert.ToInt32(_x), Convert.ToInt32(_y));
         }

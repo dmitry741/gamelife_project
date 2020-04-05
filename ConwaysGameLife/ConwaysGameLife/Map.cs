@@ -18,7 +18,7 @@ namespace ConwaysGameLife
         {
             m_map = m_tempMap = null;
             m_width = m_height = 0;
-            m_name = "Empty";
+            m_name = "Новая карта";
             m_step = 0;
         }
 
@@ -82,15 +82,9 @@ namespace ConwaysGameLife
             Array.Copy(map.m_map, m_map, map.m_map.Length);
         }
 
-        public int cellCount
-        {
-            get { return m_map.Count(x => x > 0); }
-        }
+        public int cellCount => m_map.Count(x => x > 0);
 
-        public int step
-        {
-            get { return m_step; }
-        }
+        public int step => m_step;
 
         public void CreateEmptyMap(int _width, int _height, string _name)
         {

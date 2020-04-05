@@ -163,7 +163,8 @@ namespace ConwaysGameLife
 
             if (lr is UserLifeRules)
             {
-                if (MessageBox.Show($"Are you sure that you want to remove rule: {lr}", "Game of life", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                string mess = $"Вы действительно хотите удалить это правило: {lr} ?";
+                if (MessageBox.Show(mess, "Игра жизнь", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     m_lifeRules.RemoveAt(selectedIndex);
                     listBox1.Items.RemoveAt(selectedIndex);
@@ -174,7 +175,7 @@ namespace ConwaysGameLife
             }
             else
             {
-                MessageBox.Show("This rule is built-in. Cannot remove it.");
+                MessageBox.Show("Это предустановленное правило, его нельзя удалить.");
             }
         }
 
