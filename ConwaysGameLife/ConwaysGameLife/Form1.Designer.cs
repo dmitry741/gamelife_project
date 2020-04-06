@@ -148,7 +148,7 @@
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(147, 28);
             this.btnSaveImage.TabIndex = 9;
-            this.btnSaveImage.Text = "Сохранить изображение...";
+            this.btnSaveImage.Text = "Сохранить...";
             this.btnSaveImage.UseVisualStyleBackColor = true;
             this.btnSaveImage.Click += new System.EventHandler(this.btnSabeImage_Click);
             // 
@@ -158,7 +158,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(147, 28);
             this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Очистить карту";
+            this.btnClear.Text = "Очистить карту...";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 

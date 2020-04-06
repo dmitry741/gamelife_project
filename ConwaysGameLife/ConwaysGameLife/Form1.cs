@@ -173,8 +173,8 @@ namespace ConwaysGameLife
         {
             if (m_map.cellCount > 0)
             {
-                string message = "Are you sure that you want to clear the map?";
-                string caption = " Conway's Game of Life";
+                string message = "Вы действительно хотите очистить карту?";
+                string caption = "Игра Жизнь Джона Конвея";
 
                 if (MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
@@ -274,6 +274,7 @@ namespace ConwaysGameLife
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
+                // загружаем карту
                 m_map.Load(dlg.FileName);
                 lblCount.Text = m_map.cellCount.ToString();
                 lblStep.Text = m_map.step.ToString();
@@ -298,7 +299,7 @@ namespace ConwaysGameLife
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                // сохраняем карту.
+                // сохраняем карту
                 m_bitmap.Save(dlg.FileName, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
@@ -335,6 +336,6 @@ namespace ConwaysGameLife
 
     class Utility
     {
-        static public string[] signs => new string[] { "=", ">", "<" };
+        static public string[] Signs => new string[] { "=", ">", "<" };
     }
 }
