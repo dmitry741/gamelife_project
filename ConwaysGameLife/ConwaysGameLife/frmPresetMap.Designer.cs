@@ -40,14 +40,14 @@
             this.listBox1.Location = new System.Drawing.Point(18, 18);
             this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(614, 324);
+            this.listBox1.Size = new System.Drawing.Size(614, 364);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(520, 365);
+            this.btnOk.Location = new System.Drawing.Point(520, 394);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(114, 43);
@@ -59,7 +59,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(398, 365);
+            this.button1.Location = new System.Drawing.Point(398, 394);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 43);
@@ -72,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 426);
+            this.ClientSize = new System.Drawing.Size(654, 455);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.listBox1);

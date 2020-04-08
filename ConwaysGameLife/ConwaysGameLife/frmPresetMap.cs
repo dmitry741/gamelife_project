@@ -42,6 +42,7 @@ namespace ConwaysGameLife
             listBox1.Items.Add(new GliderRifle());
             listBox1.Items.Add(new RifleCreation());
             listBox1.Items.Add(new Pentamimo());
+            listBox1.Items.Add(new EdemsGarden());
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -415,9 +416,26 @@ namespace ConwaysGameLife
         {
             get
             {
-                int[,] map = {  { 0, 1,  1},
+                int[,] map = {  { 0, 1, 1},
                                 { 1, 1, 0 },
                                 { 0, 1, 0 } };
+
+                return Transform(map);
+            }
+        }
+    }
+
+    class EdemsGarden : AbstractPresetMap
+    {
+        public EdemsGarden() : base("Эдемский сад 33х9") { }
+
+        public override int[,] map
+        {
+            get
+            {
+                int[,] map = {  { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                                { 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 },
+                                { 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 } };
 
                 return Transform(map);
             }
