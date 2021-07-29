@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+/* Урок "Игра Жизнь."
+ * Все уроки на http://digitalmodels.ru
+ * 
+ */
+
 namespace ConwaysGameLife
 {
     public partial class frmMain : Form

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ConwaysGameLife")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Danfoss")]
+[assembly: AssemblyCompany("DigitalModels")]
 [assembly: AssemblyProduct("ConwaysGameLife")]
-[assembly: AssemblyCopyright("Copyright © Danfoss 2016")]
+[assembly: AssemblyCopyright("Copyright © DigitalModels 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
