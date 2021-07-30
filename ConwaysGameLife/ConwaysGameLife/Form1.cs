@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-/* Урок "Игра Жизнь."
+/* Урок "Игра Жизнь. Клеточные автоматы."
  * Все уроки на http://digitalmodels.ru
  * 
  */
